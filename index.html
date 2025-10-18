@@ -1,14 +1,8 @@
-    <p id="enviosCounterMsg" class="text-sm text-teal-700 mb-4" aria-live="polite"></p>
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Navacerrada25 - Convierte tu idea local en realidad</title>
     <meta name="description" content="Convierte tu idea local en realidad con mentoría y apoyo para encontrar financiación. Navacerrada25 conecta líderes y recursos para proyectos de impacto social.">
     <meta name="keywords" content="Navacerrada25, impacto social, mentoría, financiación, fellows, comunidad, proyecto local">
@@ -17,1279 +11,1149 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://navacerrada25.com">
     <meta property="og:image" content="https://images.unsplash.com/photo-1598863505577-74750d3b4475?auto=format&fit=crop&w=1200&q=80">
-
-    <script src="https://cdn.tailwindcss.com" defer></script>
-
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Navacerrada25 - Convierte tu idea local en realidad">
+    <meta name="twitter:description" content="Mentoría y apoyo para encontrar financiación. Únete a la red Navacerrada25 y transforma tu comunidad.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1598863505577-74750d3b4475?auto=format&fit=crop&w=1200&q=80">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        navacerrada: {
+                            blue: '#0f172a',
+                            teal: '#0f766e'
+                        }
+                    },
+                    boxShadow: {
+                        glow: '0 22px 45px -18px rgba(15,118,110,0.35)'
+                    }
+                }
+            }
+        };
+    </script>
     <style>
-
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-
-
-
         :root { color-scheme: light; }
 
-
+        html { scroll-behavior: smooth; }
 
         body {
-
-            font-family: 'Inter', sans-serif;
-
+            font-family: 'Inter', system-ui, sans-serif;
             background-color: #f8fafc;
-
             color: #0f172a;
-
         }
-
-
 
         .pattern-dots {
-
-            background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 1px, transparent 1px),
-
-                              radial-gradient(circle at 80% 80%, rgba(255,255,255,0.15) 1px, transparent 1px),
-
-                              radial-gradient(circle at 40% 20%, rgba(255,255,255,0.15) 1px, transparent 1px);
-
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
             background-size: 48px 48px;
-
         }
-
-
-
-        .smooth-scroll { scroll-behavior: smooth; }
-
-
 
         .hover-lift,
-
         .hover-scale {
-
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
-
-
 
         .hover-lift:hover { transform: translateY(-8px); }
-
-        .hover-scale:hover { transform: scale(1.04); }
-
-
+        .hover-scale:hover { transform: scale(1.03); }
 
         a:focus-visible,
-
         button:focus-visible,
-
         input:focus-visible,
-
         select:focus-visible,
-
         textarea:focus-visible {
-
             outline: 3px solid rgba(56, 189, 248, 0.85);
-
             outline-offset: 3px;
-
         }
 
-
-
-        .focus-ring { outline: none; }
-
-        .focus-ring:focus-visible {
-
-            outline: 3px solid rgba(15, 118, 110, 0.95);
-
-            outline-offset: 3px;
-
+        section[data-section] {
+            scroll-margin-top: 7rem;
         }
 
-
-
-        .hero-grid { display: grid; gap: 3rem; }
-
-
-
-        @media (min-width: 768px) {
-
-            .hero-grid {
-
-                gap: 3.5rem;
-
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-
-                align-items: center;
-
-            }
-
+        #pageNav .nav-shell,
+        #pageNav .nav-shell-mobile {
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
         }
 
-
-
-        @media (max-width: 767px) {
-
-            header .max-w-6xl {
-
-                padding-top: 4rem;
-
-                padding-bottom: 4rem;
-
-            }
-
+        #pageNav.is-scrolled .nav-shell {
+            background-color: rgba(15, 23, 42, 0.92);
+            border-color: rgba(148, 163, 184, 0.35);
+            box-shadow: 0 28px 60px -28px rgba(15, 23, 42, 0.55);
         }
 
+        #pageNav.is-scrolled .nav-shell-mobile {
+            background-color: rgba(15, 23, 42, 0.95);
+            border-color: rgba(148, 163, 184, 0.35);
+        }
 
+        #pageNav.is-scrolled .nav-link:not(:hover) {
+            color: rgba(226, 232, 240, 0.85);
+        }
 
         @media (prefers-reduced-motion: reduce) {
-
-            *, *::before, *::after {
-
+            *,
+            *::before,
+            *::after {
                 animation-duration: 0.01ms !important;
-
                 animation-iteration-count: 1 !important;
-
                 transition-duration: 0.01ms !important;
-
                 scroll-behavior: auto !important;
-
             }
 
             .hover-lift:hover,
-
             .hover-scale:hover {
-
                 transform: none !important;
-
             }
-
         }
-
     </style>
-
 </head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:bg-white focus:text-navacerrada-blue focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">Saltar al contenido principal</a>
+    <nav id="pageNav" class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:backdrop-blur" aria-label="Navegaci&oacute;n principal">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="nav-shell flex items-center justify-between gap-4 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white transition-colors supports-[backdrop-filter]:bg-white/15">
+                <a href="#hero" class="inline-flex items-center gap-3 text-lg font-semibold tracking-wide">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-white shadow-glow">N25</span>
+                    Navacerrada25
+                </a>
+                <div class="hidden items-center gap-8 text-sm font-medium lg:flex">
+                    <a href="#porque" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Por&nbsp;qu&eacute;</a>
+                    <a href="#como" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">C&oacute;mo funciona</a>
+                    <a href="#autoevaluacion" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Autoevaluaci&oacute;n</a>
+                    <a href="#mentores" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Mentores</a>
+                    <a href="#formulario" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Postula</a>
+                    <a href="#faq" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Preguntas</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="#formulario" class="hidden rounded-xl border border-white/60 bg-white px-5 py-2.5 text-sm font-semibold text-blue-900 transition-all hover:bg-blue-50 hover:text-blue-900 lg:inline-flex">Postula ahora</a>
+                    <button id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/30 bg-white/10 text-white transition hover:border-white/60 lg:hidden" aria-label="Abrir men&uacute;" aria-expanded="false">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="18" x2="20" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobileNav" class="nav-shell-mobile mt-3 hidden flex-col gap-4 rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-sm font-semibold text-blue-100/80 transition-colors supports-[backdrop-filter]:bg-white/15 lg:hidden">
+                <a href="#porque" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Por&nbsp;qu&eacute; Navacerrada25</a>
+                <a href="#como" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">C&oacute;mo funciona</a>
+                <a href="#autoevaluacion" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Autoevaluaci&oacute;n</a>
+                <a href="#mentores" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Mentores</a>
+                <a href="#formulario" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Postula</a>
+                <a href="#faq" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Preguntas frecuentes</a>
+                <a href="#formulario" class="inline-flex items-center justify-center rounded-xl border border-white/60 bg-white px-4 py-3 text-blue-900 transition hover:bg-blue-50">Enviar mi idea</a>
+            </div>
+        </div>
+    </nav>
 
-<body class="smooth-scroll bg-slate-50 text-gray-900 antialiased">
 
-    <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:bg-white focus:text-blue-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">Saltar al contenido principal</a>
-
-
-
-    <header class="relative bg-gradient-to-r from-blue-900 via-blue-800 to-teal-700 text-white overflow-hidden">
-
-        <div aria-hidden="true" class="absolute inset-0 opacity-10 pattern-dots"></div>
-
-        <div class="max-w-6xl mx-auto px-6 py-20 relative z-10">
-
-            <div class="hero-grid">
-
+    <header class="relative overflow-hidden bg-gradient-to-r from-blue-950 via-blue-900 to-teal-700 text-white">
+        <div aria-hidden="true" class="absolute inset-0 opacity-20 pattern-dots"></div>
+        <div id="hero" class="relative z-10 mx-auto max-w-6xl px-6 pb-20 pt-24 md:pt-32">
+            <div class="grid gap-12 md:grid-cols-2 md:items-center">
                 <div class="space-y-6">
-
-                    <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30">
-
-                        <span class="text-sm font-bold tracking-[0.2em]">NAVACERRADA25</span>
-
-                    </div>
-
-                    <p class="text-blue-100 text-sm flex items-center gap-2">
-
-                        <span aria-hidden="true">✨</span>
-
-                        Impulsado por fellows de Acumen
-
+                    <span class="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-2 text-xs uppercase tracking-[0.4em] text-blue-100">Navacerrada25</span>
+                    <p class="flex items-center gap-2 text-sm text-blue-100">
+                        <svg class="h-4 w-4 text-teal-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 1.75a.75.75 0 0 1 .67.416l2.09 4.233 4.676.68a.75.75 0 0 1 .415 1.28l-3.383 3.297.798 4.654a.75.75 0 0 1-1.088.791L12 15.943l-4.178 2.188a.75.75 0 0 1-1.088-.79l.798-4.655-3.383-3.297a.75.75 0 0 1 .415-1.28l4.676-.68 2.09-4.233A.75.75 0 0 1 12 1.75Z"></path>
+                        </svg>
+                        Impulsado por Fellows de Acumen
                     </p>
-
-                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">Tu comunidad merece tu mejor idea</h1>
-
-                    <p class="text-xl md:text-2xl text-blue-100 leading-relaxed">
-
-                        Convierte problemas locales en soluciones reales con el apoyo de líderes que ya lo han logrado.
-
+                    <h1 class="text-4xl font-bold leading-tight md:text-6xl">Tu comunidad merece tu mejor idea</h1>
+                    <p class="text-lg text-blue-100 md:text-2xl md:leading-relaxed">
+                        Convierte problemas locales en soluciones reales con el acompañamiento de líderes que ya lo han logrado.
                     </p>
-
-                    <p class="text-lg text-blue-200">
-
-                        Mentoría personalizada + financiación adaptada = impacto sostenible.
-
+                    <p class="text-base text-blue-100/80 md:text-lg">
+                        Mentoría personalizada + financiación adaptada = impacto sostenible para tu territorio.
                     </p>
-
                     <div class="flex flex-wrap gap-4">
-
-                        <a href="#formulario" class="bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-all shadow-xl inline-flex items-center gap-2 text-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-
+                        <a href="#formulario" class="inline-flex items-center gap-3 rounded-xl bg-white px-9 py-4 text-lg font-semibold text-blue-900 shadow-xl transition hover:-translate-y-1 hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                             Postula ahora
-
-                            <span aria-hidden="true">↗</span>
-
+                            <span aria-hidden="true">→</span>
                         </a>
-
-                        <a href="#porque" class="bg-white/10 backdrop-blur-md text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-all border border-white/30 inline-flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-
+                        <a href="#porque" class="inline-flex items-center gap-3 rounded-xl border border-white/40 bg-white/10 px-9 py-4 text-lg font-semibold text-white transition hover:bg-white/20 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                             ¿Por qué Navacerrada25?
-
                         </a>
-
                     </div>
-
                 </div>
-
-                <div class="order-first md:order-none flex flex-col items-center">
-
-                    <div class="relative w-full max-w-xs sm:max-w-md md:max-w-full">
-
-                        <div class="relative z-10 bg-white/10 backdrop-blur-sm rounded-3xl p-4 border border-white/20 shadow-2xl">
-
-                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-900/70 via-blue-900/20 to-teal-500/60 mix-blend-multiply pointer-events-none"></div>
-                            <img src="https://images.unsplash.com/photo-1598863505577-74750d3b4475?auto=format&fit=crop&w=1200&q=80" alt="Fellows de Acumen colaborando con lideres locales en Espana" class="w-full rounded-2xl object-cover aspect-[4/3]" loading="eager" decoding="async">
-
+                <div class="order-first flex flex-col items-center md:order-none">
+                    <div class="relative w-full max-w-sm sm:max-w-md md:max-w-lg">
+                        <div class="relative z-10 rounded-[28px] border border-white/40 bg-white/10 p-4 shadow-2xl backdrop-blur-sm">
+                            <div class="pointer-events-none absolute inset-0 rounded-[22px] bg-gradient-to-br from-blue-900/60 via-blue-900/20 to-teal-500/60 mix-blend-multiply"></div>
+                            <img src="https://images.unsplash.com/photo-1598863505577-74750d3b4475?auto=format&fit=crop&w=1200&q=80" alt="Fellows de Acumen colaborando con líderes locales en España" class="aspect-[4/3] w-full rounded-2xl object-cover" loading="eager" decoding="async" fetchpriority="high">
                         </div>
-
-                        <div aria-hidden="true" class="hidden md:block absolute -top-6 -right-6 w-32 h-32 bg-teal-400/25 rounded-full blur-3xl"></div>
-
-                        <div aria-hidden="true" class="hidden md:block absolute -bottom-6 -left-6 w-40 h-40 bg-blue-400/25 rounded-full blur-3xl"></div>
-
+                        <div aria-hidden="true" class="absolute -left-8 -top-8 hidden h-32 w-32 rounded-full bg-teal-400/25 blur-3xl md:block"></div>
+                        <div aria-hidden="true" class="absolute -bottom-10 -right-6 hidden h-40 w-40 rounded-full bg-blue-400/25 blur-3xl md:block"></div>
                     </div>
-
-                    <div class="flex flex-col items-center gap-4 mt-6 md:flex-row md:gap-6">
-
-                        <div class="bg-white/95 text-gray-900 rounded-xl shadow-xl px-6 py-4 border border-teal-500/60 text-center">
-
+                    <div class="mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-6">
+                        <div class="rounded-xl border border-teal-500/60 bg-white/95 px-6 py-4 text-center text-gray-900 shadow-xl">
                             <p class="text-3xl font-extrabold">125+</p>
-
-                            <p class="text-xs uppercase tracking-wide text-gray-600">Fellows en Espa&#241;a</p>
-
+                            <p class="text-xs uppercase tracking-wide text-gray-600">Fellows en España</p>
                         </div>
-
-                        <div class="bg-white/95 text-gray-900 rounded-xl shadow-xl px-6 py-4 border border-blue-500/60 text-center">
-
+                        <div class="rounded-xl border border-blue-500/60 bg-white/95 px-6 py-4 text-center text-gray-900 shadow-xl">
                             <p class="text-3xl font-extrabold">1.800+</p>
-
                             <p class="text-xs uppercase tracking-wide text-gray-600">Fellows globales</p>
-
                         </div>
-
                     </div>
-
                 </div>
-
+            </div>
+        </div>
     </header>
-
-
-
-    <main id="contenido" class="space-y-24 md:space-y-32" role="main" aria-label="Contenido principal Navacerrada25">
-
-        <section id="porque" class="max-w-6xl mx-auto px-6 pt-20">
-
-            <div class="text-center mb-14">
-
-                <p class="inline-flex items-center gap-2 bg-teal-100 text-teal-700 font-semibold px-4 py-2 rounded-full text-sm tracking-wide">
-
-                    <span aria-hidden="true">🌱</span>
-
+    <main id="contenido" class="space-y-24 py-24 md:space-y-32 md:py-32" role="main" aria-label="Contenido principal Navacerrada25">
+        <section id="porque" data-section class="mx-auto max-w-6xl px-6">
+            <div class="text-center">
+                <span class="inline-flex items-center gap-2 rounded-full bg-teal-100 px-5 py-2 text-sm font-semibold tracking-wide text-teal-700">
+                    <svg class="h-4 w-4 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 20.25c4.556 0 8.25-3.694 8.25-8.25S16.556 3.75 12 3.75 3.75 7.444 3.75 12c0 1.558.438 3.01 1.192 4.244L3.75 20.25l4.01-1.198A8.205 8.205 0 0 0 12 20.25Z"></path>
+                    </svg>
                     ¿Por qué Navacerrada25?
-
-                </p>
-
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mt-4 leading-tight">Más que financiación: un ecosistema completo</h2>
-
-                <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-
+                </span>
+                <h2 class="mt-4 text-3xl font-bold text-slate-900 md:text-5xl">Más que financiación: un ecosistema completo</h2>
+                <p class="mx-auto mt-4 max-w-3xl text-lg text-slate-600 md:text-xl">
                     Te conectamos con una red probada de líderes, recursos y capital para que tu proyecto no solo despegue, sino que transforme vidas.
-
                 </p>
-
             </div>
-
-            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-
-                <article class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-2xl border border-transparent hover:border-teal-400">
-
-                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-100 to-teal-100 text-2xl" aria-hidden="true">🧭</div>
-
+            <div class="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <article class="hover-lift rounded-2xl border border-transparent bg-white p-8 shadow-lg transition hover:border-teal-400 hover:shadow-2xl">
+                    <div class="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-teal-100 text-teal-700" aria-hidden="true">
+                        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
                     <h3 class="mt-6 text-2xl font-semibold text-slate-900">Mentores de élite</h3>
-
-                    <p class="mt-3 text-slate-600 leading-relaxed">Accede a Fellows que ya han transformado comunidades enteras, desde sinhogarismo hasta educación digital.</p>
-
+                    <p class="mt-3 text-slate-600">Accede a Fellows que ya han transformado comunidades enteras, desde sinhogarismo hasta educación digital.</p>
                 </article>
-
-                <article class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-2xl border border-transparent hover:border-teal-400">
-
-                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-100 to-teal-100 text-2xl" aria-hidden="true">🤝</div>
-
+                <article class="hover-lift rounded-2xl border border-transparent bg-white p-8 shadow-lg transition hover:border-teal-400 hover:shadow-2xl">
+                    <div class="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-teal-100 text-teal-700" aria-hidden="true">
+                        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
                     <h3 class="mt-6 text-2xl font-semibold text-slate-900">Red poderosa</h3>
-
-                    <p class="mt-3 text-slate-600 leading-relaxed">Conéctate con 125+ Fellows en España y 1.800+ a nivel global. Una comunidad comprometida con el cambio sistémico.</p>
-
+                    <p class="mt-3 text-slate-600">Conéctate con 125+ Fellows en España y 1.800+ a nivel global. Una comunidad comprometida con el cambio sistémico.</p>
                 </article>
-
-                <article class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-2xl border border-transparent hover:border-teal-400">
-
-                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-100 to-teal-100 text-2xl" aria-hidden="true">💡</div>
-
+                <article class="hover-lift rounded-2xl border border-transparent bg-white p-8 shadow-lg transition hover:border-teal-400 hover:shadow-2xl">
+                    <div class="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-teal-100 text-teal-700" aria-hidden="true">
+                        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3v18"></path>
+                            <path d="M7 8h8.5a3.5 3.5 0 0 1 0 7H7"></path>
+                        </svg>
+                    </div>
                     <h3 class="mt-6 text-2xl font-semibold text-slate-900">Apoyo en financiación</h3>
-
-                    <p class="mt-3 text-slate-600 leading-relaxed">Te orientamos para que encuentres las mejores vías de financiación para tu proyecto, conectándote con recursos y oportunidades. Navacerrada25 no realiza inversión directa.</p>
-
+                    <p class="mt-3 text-slate-600">Te orientamos para encontrar las mejores vías de financiación. Navacerrada25 no invierte directamente, pero te conecta con recursos y oportunidades.</p>
                 </article>
-
-                <article class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-2xl border border-transparent hover:border-teal-400">
-
-                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-100 to-teal-100 text-2xl" aria-hidden="true">📊</div>
-
+                <article class="hover-lift rounded-2xl border border-transparent bg-white p-8 shadow-lg transition hover:border-teal-400 hover:shadow-2xl">
+                    <div class="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-teal-100 text-teal-700" aria-hidden="true">
+                        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
                     <h3 class="mt-6 text-2xl font-semibold text-slate-900">Impacto medible</h3>
-
-                    <p class="mt-3 text-slate-600 leading-relaxed">Metodologías probadas para estructurar tu proyecto con métricas claras y resultados tangibles en tu comunidad.</p>
-
+                    <p class="mt-3 text-slate-600">Metodologías probadas para estructurar tu proyecto con métricas claras y resultados tangibles en tu comunidad.</p>
                 </article>
-
             </div>
-
-            <div class="mt-16 bg-gradient-to-r from-blue-600 to-teal-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
-
-                <div class="grid gap-8 md:grid-cols-[1.2fr,1fr] md:items-center">
-
+            <div class="mt-16 rounded-3xl border border-teal-200 bg-gradient-to-r from-blue-600 to-teal-600 p-10 text-white shadow-2xl md:p-14">
+                <div class="grid gap-8 md:grid-cols-[1.15fr,1fr] md:items-center">
                     <div>
-
-                        <h3 class="text-3xl font-bold">El momento es ahora</h3>
-
-                        <p class="mt-4 text-blue-100 text-lg leading-relaxed">
-
-                            Cada día que pasa, tu comunidad sigue esperando la solución que tú puedes crear. Navacerrada25 existe para acelerar ese cambio y que no tengas que esperar años para ver resultados.
-
-                        </p>
-
-                        <p class="mt-4 text-lg font-semibold">
-
-                            Los Fellows que te acompañarán ya han recorrido este camino. Ahora es tu turno.
-
-                        </p>
-
+                        <h3 class="text-3xl font-bold md:text-4xl">El momento es ahora</h3>
+                        <p class="mt-4 text-lg text-blue-100/90 md:text-xl">Cada día que pasa tu comunidad sigue esperando la solución que tú puedes crear. Navacerrada25 acelera ese cambio para que no camines solo.</p>
                     </div>
-
-                    <div class="flex flex-col gap-4">
-
-                        <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-
-                            <p class="text-4xl font-bold text-white" aria-hidden="true">🎯</p>
-
-                            <p class="mt-3 font-semibold">Enfoque local, impacto real</p>
-
-                            <p class="text-sm text-blue-100">Soluciones diseñadas para tu barrio o zona rural específica.</p>
-
-                        </div>
-
-                        <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-
-                            <p class="text-4xl font-bold text-white" aria-hidden="true">🚀</p>
-
-                            <p class="mt-3 font-semibold">De la idea a la realidad</p>
-
-                            <p class="text-sm text-blue-100">Estructuración, validación y ejecución con apoyo experto.</p>
-
-                        </div>
-
+                    <div class="space-y-3 rounded-2xl border border-white/30 bg-white/10 p-6 text-blue-50 md:p-8">
+                        <p class="font-semibold">Lo que recibirás:</p>
+                        <ul class="space-y-2 text-sm leading-relaxed text-blue-100">
+                            <li>• Mentoría uno a uno con Fellows de Acumen.</li>
+                            <li>• Conexiones con financiadores alineados a tu causa.</li>
+                            <li>• Acompañamiento en medición de impacto y escalado.</li>
+                        </ul>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
-        <section class="max-w-6xl mx-auto px-6">
-
-            <div class="text-center mb-12">
-
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">¿Cómo funciona?</h2>
-
-                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Un proceso simple y transparente para hacer realidad tu proyecto.</p>
-
+        <section id="como" data-section class="mx-auto max-w-6xl px-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">¿Cómo funciona?</h2>
+                <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">Un proceso simple y transparente para hacer realidad tu proyecto.</p>
             </div>
-
-            <div class="grid gap-8 md:grid-cols-3">
-
-                <article class="text-center bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
-
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-600 text-white text-2xl font-bold shadow-lg" aria-hidden="true">1</div>
-
+            <div class="mt-12 grid gap-8 md:grid-cols-3">
+                <article class="hover-lift rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-lg">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-2xl font-bold text-white shadow-lg">1</div>
                     <h3 class="mt-6 text-xl font-semibold text-slate-900">Postula con aval</h3>
-
-                    <p class="mt-3 text-slate-600">Describe tu proyecto en una página. Un Fellow de Acumen debe avalarte. Si no conoces a ninguno, te conectamos.</p>
-
+                    <p class="mt-3 text-slate-600">Describe tu proyecto en una página y consigue el aval de un Fellow de Acumen. Si no conoces a ninguno, te ayudamos a conectar.</p>
                 </article>
-
-                <article class="text-center bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
-
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal-600 text-white text-2xl font-bold shadow-lg" aria-hidden="true">2</div>
-
+                <article class="hover-lift rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-lg">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-600 text-2xl font-bold text-white shadow-lg">2</div>
                     <h3 class="mt-6 text-xl font-semibold text-slate-900">Evaluación y match</h3>
-
-                    <p class="mt-3 text-slate-600">Revisamos tu propuesta y te conectamos con Fellows mentores que mejor se alineen con tu proyecto.</p>
-
+                    <p class="mt-3 text-slate-600">Revisamos tu propuesta y te conectamos con Fellows mentores alineados a tu misión y necesidades.</p>
                 </article>
-
-                <article class="text-center bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
-
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-600 text-white text-2xl font-bold shadow-lg" aria-hidden="true">3</div>
-
+                <article class="hover-lift rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-lg">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-2xl font-bold text-white shadow-lg">3</div>
                     <h3 class="mt-6 text-xl font-semibold text-slate-900">Acompañamiento y recursos</h3>
-
-                    <p class="mt-3 text-slate-600">Mentoría y red para ejecutar, medir y escalar tu solución con impacto real. Te ayudamos a identificar fuentes de financiación, pero no realizamos inversión directa.</p>
-
+                    <p class="mt-3 text-slate-600">Mentoría, comunidad y ruta de financiación. Te ayudamos a identificar fuentes de recursos, aunque no realizamos inversión directa.</p>
                 </article>
-
             </div>
-
         </section>
-
-
-
-        <section class="max-w-6xl mx-auto px-6">
-
-            <div class="text-center mb-14">
-
-                <p class="inline-flex items-center gap-2 bg-purple-100 text-purple-700 font-semibold px-4 py-2 rounded-full text-sm tracking-wide">
-
-                    <span aria-hidden="true">🌟</span>
-
-                    Tu equipo de mentores
-
-                </p>
-
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-4">Líderes probados que acompañarán tu camino</h2>
-
-                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Cada Fellow ha enfrentado los mismos desafíos que tú enfrentarás. Su experiencia es tu ventaja competitiva.</p>
-
-            </div>
-
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-
-                <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-transparent hover:border-teal-500 hover-lift">
-
-                    <figure class="relative">
-
-                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Roc%C3%ADo%20del%20Mar%20(1).jpg?width=600&height=600&name=Roc%C3%ADo%20del%20Mar%20(1).jpg" alt="Rocío del Mar" class="w-full h-64 object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
-
-                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
-
-                    </figure>
-
-                    <div class="p-5">
-
-                        <h3 class="font-semibold text-slate-900 text-lg">Rocío del Mar</h3>
-
-                        <p class="text-xs font-semibold text-teal-600 mt-1 uppercase tracking-wide">Directora General · TuTECHO</p>
-
-                        <p class="text-sm text-slate-600 mt-3">Sinhogarismo e inversión de impacto.</p>
-
-                    </div>
-
-                </article>
-
-                <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-transparent hover:border-teal-500 hover-lift">
-
-                    <figure class="relative">
-
-                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Iv%C3%A1n%20Caballero%20(2).jpg?width=600&height=600&name=Iv%C3%A1n%20Caballero%20(2).jpg" alt="Iván Caballero" class="w-full h-64 object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
-
-                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
-
-                    </figure>
-
-                    <div class="p-5">
-
-                        <h3 class="font-semibold text-slate-900 text-lg">Iván Caballero</h3>
-
-                        <p class="text-xs font-semibold text-teal-600 mt-1 uppercase tracking-wide">Jefe de Unidad · Presidencia del Gobierno</p>
-
-                        <p class="text-sm text-slate-600 mt-3">Tecnología para el bien común.</p>
-
-                    </div>
-
-                </article>
-
-                <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-transparent hover:border-teal-500 hover-lift">
-
-                    <figure class="relative">
-
-                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Enrique%20de%20Miguel%20(2).jpg?width=600&height=600&name=Enrique%20de%20Miguel%20(2).jpg" alt="Enrique de Miguel" class="w-full h-64 object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
-
-                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
-
-                    </figure>
-
-                    <div class="p-5">
-
-                        <h3 class="font-semibold text-slate-900 text-lg">Enrique de Miguel</h3>
-
-                        <p class="text-xs font-semibold text-teal-600 mt-1 uppercase tracking-wide">Fundador y COO · Coometas</p>
-
-                        <p class="text-sm text-slate-600 mt-3">Impacto social y emprendimiento.</p>
-
-                    </div>
-
-                </article>
-
-                <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-transparent hover:border-teal-500 hover-lift">
-
-                    <figure class="relative">
-
-                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Sergi%20Grau.jpg?width=600&height=600&name=Sergi%20Grau.jpg" alt="Sergi Grau" class="w-full h-64 object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
-
-                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
-
-                    </figure>
-
-                    <div class="p-5">
-
-                        <h3 class="font-semibold text-slate-900 text-lg">Sergi Grau</h3>
-
-                        <p class="text-xs font-semibold text-teal-600 mt-1 uppercase tracking-wide">CEO · Neurekalab</p>
-
-                        <p class="text-sm text-slate-600 mt-3">Educación y salud digital.</p>
-
-                    </div>
-
-                </article>
-
-                <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-transparent hover:border-teal-500 hover-lift">
-
-                    <figure class="relative">
-
-                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Agust%C3%ADn%20S%C3%A1nchez%20(1).jpg?width=600&height=600&name=Agust%C3%ADn%20S%C3%A1nchez%20(1).jpg" alt="Agustín Sánchez" class="w-full h-64 object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
-
-                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
-
-                    </figure>
-
-                    <div class="p-5">
-
-                        <h3 class="font-semibold text-slate-900 text-lg">Agustín Sánchez</h3>
-
-                        <p class="text-xs font-semibold text-teal-600 mt-1 uppercase tracking-wide">Facilitador · SNGULAR</p>
-
-                        <p class="text-sm text-slate-600 mt-3">Innovación y emprendimiento.</p>
-
-                    </div>
-
-                </article>
-
-                <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-transparent hover:border-teal-500 hover-lift">
-
-                    <figure class="relative">
-
-                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Alan%20Wagenberg%20(1).jpg?width=600&height=600&name=Alan%20Wagenberg%20(1).jpg" alt="Alan Wagenberg" class="w-full h-64 object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
-
-                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
-
-                    </figure>
-
-                    <div class="p-5">
-
-                        <h3 class="font-semibold text-slate-900 text-lg">Alan Wagenberg</h3>
-
-                        <p class="text-xs font-semibold text-teal-600 mt-1 uppercase tracking-wide">Gestión de conocimiento · GSG Impact</p>
-
-                        <p class="text-sm text-slate-600 mt-3">Inversión de impacto.</p>
-
-                    </div>
-
-                </article>
-
-                <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-transparent hover:border-teal-500 hover-lift">
-
-                    <figure class="relative">
-
-                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Miguel%20Guerrero%20(2).jpg?width=600&height=600&name=Miguel%20Guerrero%20(2).jpg" alt="Miguel Guerrero" class="w-full h-64 object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
-
-                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
-
-                    </figure>
-
-                    <div class="p-5">
-
-                        <h3 class="font-semibold text-slate-900 text-lg">Miguel Guerrero</h3>
-
-                        <p class="text-xs font-semibold text-teal-600 mt-1 uppercase tracking-wide">Presidente · Saturdays.AI</p>
-
-                        <p class="text-sm text-slate-600 mt-3">Inteligencia artificial para impacto social.</p>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-            <div class="mt-12 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 md:p-10 border border-purple-200">
-
-                <div class="flex flex-col md:flex-row gap-6 md:items-start">
-
-                    <span class="text-3xl md:text-4xl text-purple-600" aria-hidden="true">💬</span>
-
-                    <div class="space-y-3 text-slate-700">
-
-                        <h3 class="text-xl font-semibold text-slate-900">¿No conoces a ningún Fellow?</h3>
-
-                        <p>No te preocupes. Escríbenos a <a href="mailto:navacerrada25@gmail.com" class="text-purple-600 font-semibold hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">navacerrada25@gmail.com</a> y te conectaremos con Fellows que puedan valorar tu proyecto y darte su aval.</p>
-
-                        <p class="text-sm text-slate-600">Buscamos personas comprometidas con soluciones reales. Si tu proyecto tiene potencial de impacto, te ayudaremos a encontrar tu aval.</p>
-
-                    </div>
-
+        <section id="autoevaluacion" data-section class="mx-auto max-w-6xl px-6">
+            <div class="grid gap-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl lg:grid-cols-[1.1fr,1fr] lg:p-12">
+                <div class="space-y-5">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-slate-700">Autoevaluaci&oacute;n</span>
+                    <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Valida en minutos si tu idea est&aacute; lista</h2>
+                    <p class="text-lg text-slate-600">Somos Fellows de Acumen. No invertimos de forma directa, pero s&iacute; te acompa&ntilde;amos para pulir tu propuesta, conectar con comunidad y encontrar rutas de financiaci&oacute;n alineadas.</p>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex gap-3"><span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-teal-500"></span><span>Responde esta autoevaluaci&oacute;n para identificar en qu&eacute; temas enfocarte antes de conversar con un mentor.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-teal-500"></span><span>Si tu puntaje es bajo, no pasa nada: te daremos recomendaciones accionables.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-teal-500"></span><span>Comparte tus resultados al escribirnos para que podamos personalizar el acompa&ntilde;amiento.</span></li>
+                    </ul>
                 </div>
-
-            </div>
-
-        </section>
-
-        <section id="formulario" class="max-w-6xl mx-auto px-6">
-
-            <div id="formContainer" class="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-8 md:p-12 border border-blue-200">
-
-                <div class="text-center mb-12">
-
-                    <p class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-5 py-2 rounded-full tracking-wide text-sm uppercase">
-
-                        <span aria-hidden="true">📝</span>
-
-                        Paso 1: Postula tu proyecto
-
-                    </p>
-
-                    <h2 class="mt-4 text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Cuéntanos tu idea en una página</h2>
-
-                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Sé claro, específico y auténtico. Queremos conocer tu visión y tu compromiso con tu comunidad.</p>
-
-                </div>
-
-                <form id="applicationForm" class="space-y-10" novalidate>
-
-                    <div id="formErrors" class="hidden rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert" aria-live="assertive"></div>
-
-                    <fieldset class="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
-
-                        <legend class="flex items-center gap-3 text-xl font-semibold text-slate-900 mb-6">
-
-                            <span class="bg-blue-100 p-2 rounded-lg" aria-hidden="true">👤</span>
-
-                            Tus datos
-
-                        </legend>
-
-                        <div class="grid gap-6 md:grid-cols-2">
-
+                <div class="space-y-6">
+                    <form id="readinessForm" class="space-y-5" novalidate>
+                        <div class="space-y-4">
                             <div>
-
-                                <label for="nombre" class="block text-sm font-semibold text-slate-700 mb-2">Nombre completo *</label>
-
-                                <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-required="true" aria-describedby="nombreHelp" maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Tu nombre completo">
-
-                            </div>
-
-                            <div>
-
-                                <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Email *</label>
-
-                                <input type="email" id="email" name="email" autocomplete="email" required maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="tu@email.com">
-
-                            </div>
-
-                            <div>
-
-                                <label for="telefono" class="block text-sm font-semibold text-slate-700 mb-2">Teléfono *</label>
-
-                                <input type="tel" id="telefono" name="telefono" autocomplete="tel" required inputmode="tel" pattern="^\+?\d[\d\s\-]{6,}$" title="Formato válido, p. ej. +34 600 000 000" maxlength="20" aria-describedby="telefonoHelp" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="+34 600 000 000">
-                                <span id="telefonoHelp" class="text-xs text-slate-500">Ejemplo: +34 600 000 000</span>
-
-                            </div>
-
-                            <div>
-
-                                <label for="ubicacion" class="block text-sm font-semibold text-slate-700 mb-2">Ubicación del proyecto *</label>
-
-                                <input type="text" id="ubicacion" name="ubicacion" required maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Barrio o zona rural específica">
-
-                            </div>
-
-                        </div>
-
-                    </fieldset>
-
-                    <fieldset class="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
-
-                        <legend class="flex items-center gap-3 text-xl font-semibold text-slate-900 mb-6">
-
-                            <span class="bg-teal-100 p-2 rounded-lg" aria-hidden="true">🤝</span>
-
-                            Aval de Fellow de Acumen (obligatorio)
-
-                        </legend>
-
-                        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-lg mb-6 text-slate-800">
-
-                            <p class="font-semibold text-amber-800">Requisito obligatorio:</p>
-
-                            <p class="mt-2 text-sm">Si no conoces a ningún Fellow, escríbenos a <a href="mailto:navacerrada25@gmail.com" class="text-teal-600 font-semibold hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500">navacerrada25@gmail.com</a> y te conect
-
-                        </div>
-
-                        <div class="grid gap-6 md:grid-cols-2">
-
-                            <div>
-
-                                <label for="nombreAval" class="block text-sm font-semibold text-slate-700 mb-2">Nombre del Fellow que te avala *</label>
-
-                                <input type="text" id="nombreAval" name="nombreAval" required maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Nombre completo del Fellow">
-
-                            </div>
-
-                            <div>
-
-                                <label for="emailAval" class="block text-sm font-semibold text-slate-700 mb-2">Email del Fellow *</label>
-
-                                <input type="email" id="emailAval" name="emailAval" required maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="email@ejemplo.com">
-
-                            </div>
-
-                        </div>
-
-                    </fieldset>
-
-                    <fieldset class="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
-
-                        <legend class="flex items-center gap-3 text-xl font-semibold text-slate-900 mb-6">
-
-                            <span class="bg-purple-100 p-2 rounded-lg" aria-hidden="true">📄</span>
-
-                            Tu proyecto (máximo 1 página)
-
-                        </legend>
-
-                        <div class="space-y-6">
-
-                            <div>
-
-                                <label for="estadoProyecto" class="block text-sm font-semibold text-slate-700 mb-2">Estado del proyecto *</label>
-
-                                <select id="estadoProyecto" name="estadoProyecto" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
-
-                                    <option value="">Selecciona el estado actual</option>
-
-                                    <option value="idea">Es una idea que quiero desarrollar</option>
-
-                                    <option value="piloto">Estoy haciendo un piloto o prueba</option>
-
-                                    <option value="operando">Ya está en marcha y operando</option>
-
-                                    <option value="escalando">En operación y buscando escalar</option>
-
+                                <label for="score-problema" class="mb-2 block text-sm font-semibold text-slate-800">Problema identificado</label>
+                                <select id="score-problema" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
+                                    <option value="">Selecciona una opci&oacute;n</option>
+                                    <option value="2">Tenemos evidencia clara del problema y de a qui&eacute;n afecta</option>
+                                    <option value="1">Estamos recogiendo datos y testimonios</option>
+                                    <option value="0">A&uacute;n es una intuici&oacute;n, sin datos</option>
                                 </select>
-
                             </div>
-
                             <div>
-
-                                <label for="problema" class="block text-sm font-semibold text-slate-700 mb-2">El problema en tu comunidad *</label>
-
-                                <textarea id="problema" name="problema" rows="4" maxlength="4000" required aria-describedby="problemaHelp problemaCountText" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-y" placeholder="¿Qué problema social, ambiental o económico has identificado? ¿Por qué es urgente resolverlo? ¿A quiénes afecta específicamente?"></textarea>
-
-                                <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mt-2 text-xs text-slate-500">
-
-                                    <p id="problemaHelp">Sé específico y concreto.</p>
-
-                                    <p id="problemaCountText" class="text-slate-400"><span id="problemaCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
-
-                                </div>
-
+                                <label for="score-comunidad" class="mb-2 block text-sm font-semibold text-slate-800">V&iacute;nculo con la comunidad</label>
+                                <select id="score-comunidad" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
+                                    <option value="">Selecciona una opci&oacute;n</option>
+                                    <option value="2">Estamos co-creando soluciones con la comunidad</option>
+                                    <option value="1">Tenemos conversaciones frecuentes, buscamos m&aacute;s aliados</option>
+                                    <option value="0">Necesitamos acercarnos y comprender mejor</option>
+                                </select>
                             </div>
-
                             <div>
-
-                                <label for="solucion" class="block text-sm font-semibold text-slate-700 mb-2">Tu solución *</label>
-
-                                <textarea id="solucion" name="solucion" rows="5" maxlength="4000" required aria-describedby="solucionHelp solucionCountText" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-y" placeholder="¿Cómo propones resolver el problema? ¿Qué hace única tu solución? ¿Qué actividades o servicios ofrecerás? ¿Ya está validada?"></textarea>
-
-                                <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mt-2 text-xs text-slate-500">
-
-                                    <p id="solucionHelp">Describe tu propuesta de valor.</p>
-
-                                    <p id="solucionCountText" class="text-slate-400"><span id="solucionCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
-
-                                </div>
-
+                                <label for="score-solucion" class="mb-2 block text-sm font-semibold text-slate-800">Nivel de validaci&oacute;n</label>
+                                <select id="score-solucion" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
+                                    <option value="">Selecciona una opci&oacute;n</option>
+                                    <option value="2">Contamos con piloto o versi&oacute;n beta en marcha</option>
+                                    <option value="1">Tenemos un plan y materiales listos para probar</option>
+                                    <option value="0">A&uacute;n estamos dise&ntilde;ando la propuesta</option>
+                                </select>
                             </div>
-
                             <div>
-
-                                <label for="impacto" class="block text-sm font-semibold text-slate-700 mb-2">Impacto esperado *</label>
-
-                                <textarea id="impacto" name="impacto" rows="3" maxlength="2000" required aria-describedby="impactoHelp impactoCountText" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-y" placeholder="¿A cuántas personas beneficiará? ¿Qué cambio concreto generarás? ¿Cómo medirás el impacto? ¿En qué plazo?"></textarea>
-
-                                <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mt-2 text-xs text-slate-500">
-
-                                    <p id="impactoHelp">Incluye métricas cuando sea posible.</p>
-
-                                    <p id="impactoCountText" class="text-slate-400"><span id="impactoCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
-
-                                </div>
-
+                                <label for="score-apoyo" class="mb-2 block text-sm font-semibold text-slate-800">Tipo de apoyo solicitado</label>
+                                <select id="score-apoyo" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
+                                    <option value="">Selecciona una opci&oacute;n</option>
+                                    <option value="2">Sabemos qu&eacute; mentor&iacute;a, conexiones o aprendizaje necesitamos</option>
+                                    <option value="1">Tenemos una idea general, buscamos priorizar</option>
+                                    <option value="0">Queremos explorar posibilidades desde cero</option>
+                                </select>
                             </div>
-
                             <div>
-
-                                <label for="apoyo" class="block text-sm font-semibold text-slate-700 mb-2">¿Qué apoyo necesitas de Navacerrada25? *</label>
-
-                                <textarea id="apoyo" name="apoyo" rows="4" maxlength="4000" required aria-describedby="apoyoHelp apoyoCountText" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-y" placeholder="Especifica: ¿Mentoría en qué áreas? ¿Apoyo para encontrar financiación? ¿Red de contactos? ¿Formación?"></textarea>
-
-                                <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mt-2 text-xs text-slate-500">
-
-                                    <p id="apoyoHelp">Detalla qué necesitas para avanzar.</p>
-
-                                    <p id="apoyoCountText" class="text-slate-400"><span id="apoyoCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
-
-                                </div>
-
+                                <label for="score-dedicacion" class="mb-2 block text-sm font-semibold text-slate-800">Dedicaci&oacute;n y equipo</label>
+                                <select id="score-dedicacion" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
+                                    <option value="">Selecciona una opci&oacute;n</option>
+                                    <option value="2">Podemos dedicar 4-6 horas al mes y contamos con apoyo de equipo</option>
+                                    <option value="1">Podemos dedicar tiempo limitado, necesitamos organizarnos</option>
+                                    <option value="0">Nos falta tiempo o equipo para avanzar</option>
+                                </select>
                             </div>
-
                         </div>
+                    </form>
+                    <div class="rounded-2xl bg-slate-900 px-6 py-5 text-white">
+                        <p class="text-xs font-semibold uppercase tracking-wide text-teal-200">Tu preparaci&oacute;n</p>
+                        <p id="scoreValue" class="mt-2 text-3xl font-bold">0/10</p>
+                        <p id="scoreMessage" aria-live="polite" class="mt-3 text-sm text-slate-200">Responde todas las preguntas para ver recomendaciones.</p>
+                    </div>
+                    <div class="flex flex-col gap-3 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                        <button id="resetReadiness" type="button" class="inline-flex items-center justify-center rounded-lg border border-teal-600 px-4 py-2 text-teal-700 transition hover:bg-teal-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">Limpiar respuestas</button>
+                        <p>Comparte tu resultado cuando escribas a <a href="mailto:navacerrada25@gmail.com" class="font-semibold text-teal-600 underline">navacerrada25@gmail.com</a>.</p>
+                    </div>
+                    <p class="text-xs text-slate-500">Recuerda: Navacerrada25 no realiza inversi&oacute;n directa. Usamos estos datos para priorizar mentor&iacute;a y conexiones alineadas a tu etapa.</p>
+                </div>
+            </div>
+        </section>
+        <section id="mentores" data-section class="mx-auto max-w-6xl px-6">
+            <div class="text-center">
+                <span class="inline-flex items-center gap-2 rounded-full bg-purple-100 px-5 py-2 text-sm font-semibold tracking-wide text-purple-700">
+                    <svg class="h-4 w-4 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l3 3"></path>
+                    </svg>
+                    Tu equipo de mentores
+                </span>
+                <h2 class="mt-4 text-3xl font-bold text-slate-900 md:text-4xl">Líderes probados que acompañarán tu camino</h2>
+                <p class="mx-auto mt-4 max-w-3xl text-lg text-slate-600">Cada Fellow ha enfrentado los mismos desafíos que tú encontrarás. Su experiencia es tu ventaja competitiva.</p>
+            </div>
+            <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+                <article class="hover-lift overflow-hidden rounded-2xl border border-transparent bg-white shadow-lg transition hover:border-teal-500">
+                    <figure class="relative">
+                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Roc%C3%ADo%20del%20Mar%20(1).jpg?width=600&height=600&name=Roc%C3%ADo%20del%20Mar%20(1).jpg" alt="Rocío del Mar" class="h-64 w-full object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
+                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+                    </figure>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-slate-900">Rocío del Mar</h3>
+                        <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-teal-600">Directora General · TuTECHO</p>
+                        <p class="mt-3 text-sm text-slate-600">Sinhogarismo e inversión de impacto.</p>
+                    </div>
+                </article>
+                <article class="hover-lift overflow-hidden rounded-2xl border border-transparent bg-white shadow-lg transition hover:border-teal-500">
+                    <figure class="relative">
+                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Enrique%20de%20Miguel%20(2).jpg?width=600&height=600&name=Enrique%20de%20Miguel%20(2).jpg" alt="Enrique de Miguel" class="h-64 w-full object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
+                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+                    </figure>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-slate-900">Enrique de Miguel</h3>
+                        <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-teal-600">Fundador y COO · Coometas</p>
+                        <p class="mt-3 text-sm text-slate-600">Impacto social y emprendimiento.</p>
+                    </div>
+                </article>
+                <article class="hover-lift overflow-hidden rounded-2xl border border-transparent bg-white shadow-lg transition hover:border-teal-500">
+                    <figure class="relative">
+                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Sergi%20Grau.jpg?width=600&height=600&name=Sergi%20Grau.jpg" alt="Sergi Grau" class="h-64 w-full object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
+                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+                    </figure>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-slate-900">Sergi Grau</h3>
+                        <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-teal-600">CEO · Neurekalab</p>
+                        <p class="mt-3 text-sm text-slate-600">Educación y salud digital.</p>
+                    </div>
+                </article>
+                <article class="hover-lift overflow-hidden rounded-2xl border border-transparent bg-white shadow-lg transition hover:border-teal-500">
+                    <figure class="relative">
+                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Agust%C3%ADn%20S%C3%A1nchez%20(1).jpg?width=600&height=600&name=Agust%C3%ADn%20S%C3%A1nchez%20(1).jpg" alt="Agustín Sánchez" class="h-64 w-full object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
+                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+                    </figure>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-slate-900">Agustín Sánchez</h3>
+                        <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-teal-600">Facilitador · SNGULAR</p>
+                        <p class="mt-3 text-sm text-slate-600">Innovación y emprendimiento.</p>
+                    </div>
+                </article>
+                <article class="hover-lift overflow-hidden rounded-2xl border border-transparent bg-white shadow-lg transition hover:border-teal-500">
+                    <figure class="relative">
+                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Alan%20Wagenberg%20(1).jpg?width=600&height=600&name=Alan%20Wagenberg%20(1).jpg" alt="Alan Wagenberg" class="h-64 w-full object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
+                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+                    </figure>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-slate-900">Alan Wagenberg</h3>
+                        <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-teal-600">Gestión del conocimiento · GSG Impact</p>
+                        <p class="mt-3 text-sm text-slate-600">Inversión de impacto.</p>
+                    </div>
+                </article>
+                <article class="hover-lift overflow-hidden rounded-2xl border border-transparent bg-white shadow-lg transition hover:border-teal-500">
+                    <figure class="relative">
+                        <img src="https://blog.acumenacademy.org/hs-fs/hubfs/Miguel%20Guerrero%20(2).jpg?width=600&height=600&name=Miguel%20Guerrero%20(2).jpg" alt="Miguel Guerrero" class="h-64 w-full object-cover object-top sm:h-72 md:h-80" loading="lazy" decoding="async">
+                        <span aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+                    </figure>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-slate-900">Miguel Guerrero</h3>
+                        <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-teal-600">Presidente · Saturdays.AI</p>
+                        <p class="mt-3 text-sm text-slate-600">Inteligencia artificial para impacto social.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="mt-12 rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-8 md:p-10">
+                <div class="flex flex-col gap-6 md:flex-row md:items-start">
+                    <div class="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100 text-2xl text-purple-600" aria-hidden="true">?</div>
+                    <div class="space-y-3 text-slate-700">
+                        <h3 class="text-xl font-semibold text-slate-900">¿No conoces a ningún Fellow?</h3>
+                        <p>Escríbenos a <a href="mailto:navacerrada25@gmail.com" class="font-semibold text-purple-600 underline underline-offset-2">navacerrada25@gmail.com</a> y te conectaremos con personas que puedan valorar tu proyecto y darte su aval.</p>
+                        <p class="text-sm text-slate-600">Buscamos líderes comprometidos con soluciones reales. Si tu idea tiene potencial de impacto, te ayudaremos a encontrar el aval adecuado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="formulario" data-section class="mx-auto max-w-6xl px-6">
+            <div id="formContainer" class="rounded-3xl border border-blue-200 bg-gradient-to-br from-white to-blue-50 p-8 shadow-2xl md:p-12">
+                <div class="text-center">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">
+                        Paso 1
+                    </span>
+                    <h2 class="mt-4 text-3xl font-bold text-slate-900 md:text-4xl">Cuéntanos tu idea en una página</h2>
+                    <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">Sé claro, específico y auténtico. Queremos conocer tu visión y tu compromiso con tu comunidad.</p>
+                </div>
 
+                <form id="applicationForm" class="mt-10 space-y-10" novalidate>
+                    <div id="formErrors" class="hidden rounded-xl border border-red-300 bg-red-50 px-5 py-4 text-sm text-red-800" role="alert" aria-live="assertive" tabindex="-1"></div>
+
+                    <fieldset class="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
+                        <legend class="mb-6 flex items-center gap-3 text-xl font-semibold text-slate-900">
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-700" aria-hidden="true">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                    <path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path>
+                                </svg>
+                            </span>
+                            Tus datos
+                        </legend>
+                        <div class="grid gap-6 md:grid-cols-2">
+                            <div>
+                                <label for="nombre" class="mb-2 block text-sm font-semibold text-slate-700">Nombre completo *</label>
+                                <input type="text" id="nombre" name="nombre" autocomplete="name" required maxlength="80" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Tu nombre completo">
+                            </div>
+                            <div>
+                                <label for="email" class="mb-2 block text-sm font-semibold text-slate-700">Email *</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required maxlength="80" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="tu@email.com">
+                            </div>
+                            <div>
+                                <label for="telefono" class="mb-2 block text-sm font-semibold text-slate-700">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono" autocomplete="tel" required inputmode="tel" pattern="^\+?\d[\d\s\-]{6,}$" title="Formato válido, por ejemplo +34 600 000 000" maxlength="20" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="+34 600 000 000" aria-describedby="telefonoHelp">
+                                <span id="telefonoHelp" class="mt-1 block text-xs text-slate-500">Ejemplo: +34 600 000 000</span>
+                            </div>
+                            <div>
+                                <label for="ubicacion" class="mb-2 block text-sm font-semibold text-slate-700">Ubicación del proyecto *</label>
+                                <input type="text" id="ubicacion" name="ubicacion" required maxlength="80" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Barrio o zona rural específica">
+                            </div>
+                        </div>
                     </fieldset>
-
-                    <div class="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl p-8 text-white text-center shadow-xl space-y-6">
-
+                    <fieldset class="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
+                        <legend class="mb-6 flex items-center gap-3 text-xl font-semibold text-slate-900">
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-teal-100 text-teal-700" aria-hidden="true">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8 17l4 4 4-4"></path>
+                                    <path d="M12 12v9"></path>
+                                    <path d="M20.88 18.09A10 10 0 1 0 21 12"></path>
+                                </svg>
+                            </span>
+                            Tu aval Fellow
+                        </legend>
+                        <p class="mb-6 text-sm text-slate-600">Necesitas el aval de un Fellow de Acumen. Si todavía no tienes contacto directo, escríbenos y te conectamos.</p>
+                        <div class="grid gap-6 md:grid-cols-2">
+                            <div>
+                                <label for="nombreAval" class="mb-2 block text-sm font-semibold text-slate-700">Nombre del Fellow *</label>
+                                <input type="text" id="nombreAval" name="nombreAval" required maxlength="80" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Nombre completo del Fellow">
+                            </div>
+                            <div>
+                                <label for="emailAval" class="mb-2 block text-sm font-semibold text-slate-700">Email del Fellow *</label>
+                                <input type="email" id="emailAval" name="emailAval" required maxlength="80" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="email@ejemplo.com">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
+                        <legend class="mb-6 flex items-center gap-3 text-xl font-semibold text-slate-900">
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 text-purple-700" aria-hidden="true">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 3h7l2 3h9a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path>
+                                </svg>
+                            </span>
+                            Tu proyecto (máximo 1 página)
+                        </legend>
+                        <div class="space-y-6">
+                            <div>
+                                <label for="estadoProyecto" class="mb-2 block text-sm font-semibold text-slate-700">Estado del proyecto *</label>
+                                <select id="estadoProyecto" name="estadoProyecto" required class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Selecciona el estado actual</option>
+                                    <option value="idea">Es una idea que quiero desarrollar</option>
+                                    <option value="piloto">Estoy haciendo un piloto o prueba</option>
+                                    <option value="operando">Ya está en marcha y operando</option>
+                                    <option value="escalando">En operación y buscando escalar</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="problema" class="mb-2 block text-sm font-semibold text-slate-700">El problema en tu comunidad *</label>
+                                <textarea id="problema" name="problema" rows="4" maxlength="4000" required aria-describedby="problemaHelp problemaCountText" class="w-full resize-y rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="¿Qué problema social, ambiental o económico has identificado? ¿Por qué es urgente resolverlo? ¿A quiénes afecta?"></textarea>
+                                <div class="mt-2 flex flex-col gap-1 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                                    <p id="problemaHelp">Sé específico y usa datos cuando sea posible.</p>
+                                    <p id="problemaCountText" class="text-slate-400"><span id="problemaCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="solucion" class="mb-2 block text-sm font-semibold text-slate-700">Tu solución *</label>
+                                <textarea id="solucion" name="solucion" rows="5" maxlength="4000" required aria-describedby="solucionHelp solucionCountText" class="w-full resize-y rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="¿Cómo propones resolver el problema? ¿Qué hace única tu solución? ¿Qué actividades o servicios ofrecerás? ¿Ya está validada?"></textarea>
+                                <div class="mt-2 flex flex-col gap-1 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                                    <p id="solucionHelp">Describe tu propuesta de valor y qué la diferencia.</p>
+                                    <p id="solucionCountText" class="text-slate-400"><span id="solucionCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="impacto" class="mb-2 block text-sm font-semibold text-slate-700">Impacto esperado *</label>
+                                <textarea id="impacto" name="impacto" rows="3" maxlength="2000" required aria-describedby="impactoHelp impactoCountText" class="w-full resize-y rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="¿A cuántas personas beneficiarás? ¿Qué cambio concreto generarás? ¿Cómo lo medirás y en qué plazo?"></textarea>
+                                <div class="mt-2 flex flex-col gap-1 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                                    <p id="impactoHelp">Incluye métricas y horizonte temporal.</p>
+                                    <p id="impactoCountText" class="text-slate-400"><span id="impactoCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="apoyo" class="mb-2 block text-sm font-semibold text-slate-700">¿Qué apoyo necesitas de Navacerrada25? *</label>
+                                <textarea id="apoyo" name="apoyo" rows="3" maxlength="2000" required aria-describedby="apoyoHelp apoyoCountText" class="w-full resize-y rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Explícanos qué mentoría, conexiones o recursos necesitas para avanzar."></textarea>
+                                <div class="mt-2 flex flex-col gap-1 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                                    <p id="apoyoHelp">Sé concreto para facilitar el match con mentores.</p>
+                                    <p id="apoyoCountText" class="text-slate-400"><span id="apoyoCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="rounded-2xl bg-gradient-to-r from-blue-600 to-teal-600 px-8 py-10 text-center text-white shadow-xl">
                         <h3 class="text-2xl font-semibold">¿Listo para transformar tu comunidad?</h3>
-
-                        <p class="text-blue-100 text-base max-w-2xl mx-auto">Generaremos un borrador de correo con toda la información para que lo revises y confirmes el envío a nuestro equipo.</p>
-
-                        <button type="submit" id="submitButton" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-blue-900 font-semibold px-10 py-4 rounded-xl shadow-xl hover:bg-blue-50 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Enviar mi postulación</button>
-                        <button type="submit" id="submitButton" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-blue-900 font-semibold px-10 py-4 rounded-xl shadow-xl hover:bg-blue-50 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-                            <span id="spinner" class="hidden"><svg class="animate-spin h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg></span>
+                        <p class="mt-4 text-base text-blue-100/90 md:text-lg">Generaremos un borrador de correo con toda la información para que lo revises y confirmes el envío a nuestro equipo.</p>
+                        <button type="submit" id="submitButton" class="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-white px-10 py-4 text-lg font-semibold text-blue-900 shadow-xl transition hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
+                            <span id="spinner" class="hidden">
+                                <svg class="h-5 w-5 animate-spin text-blue-600" viewBox="0 0 24 24" fill="none">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v8z"></path>
+                                </svg>
+                            </span>
                             <span id="submitText">Enviar mi postulación</span>
                         </button>
-
-                        <p class="text-xs text-blue-100 max-w-2xl mx-auto">También intentaremos guardar una copia en tu portapapeles para que no pierdas tu información.</p>
-
+                        <p class="mt-4 text-xs text-blue-100">También intentaremos guardar una copia en tu portapapeles para que no pierdas tu información.</p>
                     </div>
 
-                    <p class="text-center text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">Al enviar este formulario aceptas que tu información sea compartida con Navacerrada25 y los Fellows mentores de Acumen para evaluar tu proyecto. Tratamos tus datos con total confidencialidad.</p>
-                    <div class="mt-4 text-xs text-slate-600 bg-slate-100 rounded-xl p-4" role="note" aria-label="Aviso de privacidad">
-                        <strong>Aviso de privacidad:</strong> Tus datos serán tratados con confidencialidad y solo se usarán para evaluar tu postulación y contactar contigo. Puedes solicitar la eliminación de tus datos escribiendo a <a href="mailto:navacerrada25@gmail.com" class="text-blue-600 underline">navacerrada25@gmail.com</a>.
+                    <p class="text-center text-xs leading-relaxed text-slate-600 md:text-sm">Al enviar este formulario aceptas que tu información sea compartida con Navacerrada25 y los Fellows mentores de Acumen para evaluar tu proyecto. Tratamos tus datos con confidencialidad.</p>
+                    <div class="rounded-xl bg-slate-100 p-4 text-xs text-slate-600" role="note" aria-label="Aviso de privacidad">
+                        <strong>Aviso de privacidad:</strong> Tus datos se usarán exclusivamente para evaluar tu postulación y contactar contigo. Puedes solicitar la eliminación escribiendo a <a href="mailto:navacerrada25@gmail.com" class="font-semibold text-blue-700 underline">navacerrada25@gmail.com</a>.
                     </div>
-
                 </form>
 
-                <p class="text-base text-slate-600 mb-8 max-w-2xl mx-auto">Abre tu gestor de correo, revisa el borrador y envíalo para confirmar tu postulación. También copiamos la información al portapapeles (si tu navegador lo permite) para que puedas pegarla fácilmente.</p>
-
-                <div class="bg-white rounded-xl p-6 max-w-md mx-auto shadow-lg border border-green-100">
-
-                    <h3 class="font-semibold text-slate-900 mb-3">Siguientes pasos</h3>
-
-                    <ol class="space-y-3 text-sm text-slate-600">
-
-                        <li class="flex gap-2"><span class="text-teal-600 font-semibold">1.</span><span>Revisa el borrador del correo generado automáticamente.</span></li>
-
-                        <li class="flex gap-2"><span class="text-teal-600 font-semibold">2.</span><span>Envía el mensaje a <strong>navacerrada25@gmail.com</strong> para completar tu postulación y recibir orientación sobre cómo avanzar y encontrar vías de financiación.</span></li>
-
-                        <li class="flex gap-2"><span class="text-teal-600 font-semibold">3.</span><span>Guarda el correo enviado y espera nuestra respuesta en un máximo de 7 días.</span></li>
-
-                    </ol>
-
+                <div class="mt-12 flex flex-col gap-6 text-sm text-slate-600 md:flex-row md:items-start md:justify-between">
+                    <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-lg md:w-2/3">
+                        <h3 class="text-base font-semibold text-slate-900">Siguientes pasos</h3>
+                        <ol class="mt-3 space-y-3 text-sm leading-relaxed">
+                            <li class="flex gap-2"><span class="font-semibold text-teal-600">1.</span> Revisa el borrador del correo generado automáticamente.</li>
+                            <li class="flex gap-2"><span class="font-semibold text-teal-600">2.</span> Envía el mensaje a <strong>navacerrada25@gmail.com</strong> para completar tu postulación y recibir orientación sobre cómo avanzar.</li>
+                            <li class="flex gap-2"><span class="font-semibold text-teal-600">3.</span> Guarda el correo enviado y espera nuestra respuesta en un máximo de 7 días.</li>
+                        </ol>
+                    </div>
+                    <div class="rounded-xl border border-blue-200 bg-white p-6 shadow-lg md:w-1/3">
+                        <p class="text-sm text-slate-600">Mientras tanto, conoce más sobre los Fellows de Acumen en España:</p>
+                        <a href="https://blog.acumenacademy.org/conoce-a-la-cohorte-2025-de-fellows-en-espa%C3%B1a" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300">
+                            Visitar blog de Fellows
+                        </a>
+                    </div>
                 </div>
-
-                <div class="mt-8">
-
-                    <p class="text-sm text-slate-600 mb-4">Mientras tanto, conoce más sobre los Fellows de Acumen en España:</p>
-
-                    <a href="https://blog.acumenacademy.org/conoce-a-la-cohorte-2025-de-fellows-en-espa%C3%B1a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300">Visitar blog de Fellows</a>
-
-                </div>
-
             </div>
-
+            <div id="successMessage" class="hidden rounded-3xl border border-green-200 bg-white p-10 text-slate-700 shadow-2xl md:p-14" tabindex="-1">
+                <div class="mx-auto max-w-2xl text-center">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-100 text-teal-700">
+                        <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="mt-6 text-2xl font-semibold text-slate-900">Tu postulación está lista para enviarse</h3>
+                    <p class="mt-4 text-base text-slate-600">Se abrió un borrador en tu gestor de correo. Revísalo, añade detalles si lo necesitas y envíalo para completar la postulación.</p>
+                    <p id="enviosCounterMsg" class="mt-4 text-sm font-medium text-teal-700" aria-live="polite"></p>
+                    <p id="clipboardFeedback" class="mt-2 text-sm text-slate-600" aria-live="polite"></p>
+                    <details id="summaryDetails" class="group mt-6 hidden rounded-xl border border-slate-200 bg-slate-50 p-4 text-left">
+                        <summary class="cursor-pointer text-sm font-semibold text-slate-800 group-open:text-teal-700">Ver el resumen generado</summary>
+                        <pre id="summaryContent" class="mt-3 max-h-80 overflow-auto rounded-lg bg-white p-4 text-xs text-slate-700"></pre>
+                    </details>
+                    <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                        <button id="newApplicationButton" class="inline-flex items-center justify-center rounded-xl border border-teal-500 px-6 py-3 text-sm font-semibold text-teal-700 transition hover:bg-teal-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500">
+                            Enviar otra postulación
+                        </button>
+                        <a href="#mentores" class="inline-flex items-center justify-center rounded-xl bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-teal-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500">
+                            Volver a los mentores
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="faq" data-section class="mx-auto max-w-6xl px-6">
+            <div class="rounded-3xl bg-gradient-to-br from-slate-900 to-blue-900 p-12 text-white shadow-2xl md:p-16">
+                <div class="grid gap-8 md:grid-cols-[1.2fr,1fr] md:items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold md:text-4xl">Preguntas frecuentes</h2>
+                        <p class="mt-4 text-blue-100/90">Si necesitas más detalles, escríbenos a <a href="mailto:navacerrada25@gmail.com" class="font-semibold text-white underline underline-offset-4">navacerrada25@gmail.com</a>.</p>
+                    </div>
+                    <div class="space-y-6">
+                        <details class="group rounded-2xl border border-white/20 bg-white/10 p-6">
+                            <summary class="cursor-pointer text-lg font-semibold text-white group-open:text-teal-200">¿Hay convocatoria con fecha límite?</summary>
+                            <p class="mt-3 text-sm text-blue-100">Trabajamos en ciclos trimestrales. Envía tu postulación cuando estés listo y la incorporamos al ciclo abierto.</p>
+                        </details>
+                        <details class="group rounded-2xl border border-white/20 bg-white/10 p-6">
+                            <summary class="cursor-pointer text-lg font-semibold text-white group-open:text-teal-200">¿Navacerrada25 aporta financiación directa?</summary>
+                            <p class="mt-3 text-sm text-blue-100">No realizamos inversión directa. Sí te conectamos con rutas de financiación (pública y privada) y te ayudamos a preparar tus aplicaciones.</p>
+                        </details>
+                        <details class="group rounded-2xl border border-white/20 bg-white/10 p-6">
+                            <summary class="cursor-pointer text-lg font-semibold text-white group-open:text-teal-200">¿Qué tipo de proyectos buscamos?</summary>
+                            <p class="mt-3 text-sm text-blue-100">Iniciativas con impacto social o ambiental en comunidades locales. Valoramos el compromiso del equipo, la claridad del problema y el potencial de escalabilidad.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mx-auto max-w-6xl px-6">
+            <div class="rounded-3xl border border-blue-200 bg-white p-12 shadow-2xl md:p-16">
+                <blockquote class="text-2xl font-light leading-relaxed italic text-slate-800 md:text-3xl">El cambio sistémico empieza cuando alguien en una comunidad decide que las cosas pueden ser diferentes. Navacerrada25 existe para que esa persona no camine sola.</blockquote>
+                <p class="mt-6 text-lg font-semibold text-teal-700">Acumen Fellows España</p>
+            </div>
         </section>
 
-        <section class="max-w-6xl mx-auto px-6">
-
-            <div class="bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl p-12 md:p-16 text-white relative overflow-hidden">
-
-                <div aria-hidden="true" class="absolute top-0 right-0 w-64 h-64 bg-teal-500/15 rounded-full blur-3xl"></div>
-
-                <div aria-hidden="true" class="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl"></div>
-
-                <div class="relative z-10 max-w-3xl mx-auto text-center space-y-6">
-
-                    <span class="text-6xl" aria-hidden="true">❝</span>
-
-                    <blockquote class="text-2xl md:text-3xl font-light leading-relaxed italic">El cambio sistémico empieza cuando alguien en una comunidad decide que las cosas pueden ser diferentes. Navacerrada25 existe para asegurarnos de que esa persona no está sola.</blockquote>
-
-                    <p class="text-blue-200 font-semibold text-lg">Acumen Fellows España</p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <section class="max-w-6xl mx-auto px-6 pb-20">
-
-            <div class="bg-gradient-to-r from-teal-500 to-blue-600 rounded-3xl p-12 text-center text-white shadow-2xl space-y-6">
-
-                <h2 class="text-3xl md:text-4xl font-bold">Tu comunidad está esperando</h2>
-
-                <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">Cada gran transformación comenzó con una idea local y el coraje de llevarla adelante. Nosotros te acompañamos en el camino.</p>
-
-                <a href="#formulario" class="inline-flex items-center justify-center gap-3 bg-white text-blue-900 font-semibold px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all text-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-
+        <section class="mx-auto max-w-6xl px-6 pb-8 md:pb-12">
+            <div class="space-y-6 rounded-3xl bg-gradient-to-r from-teal-500 to-blue-600 p-12 text-center text-white shadow-2xl md:space-y-8 md:p-16">
+                <h2 class="text-3xl font-bold md:text-4xl">Tu comunidad está esperando</h2>
+                <p class="mx-auto max-w-2xl text-lg text-blue-100 md:text-xl">Cada gran transformación comenzó con una idea local y el coraje de llevarla adelante. Nosotros te acompañamos en el camino.</p>
+                <a href="#formulario" class="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-10 py-5 text-lg font-semibold text-blue-900 shadow-xl transition hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                     Postula tu proyecto ahora
-
-                    <span aria-hidden="true">↗</span>
-
+                    <span aria-hidden="true">→</span>
                 </a>
-
             </div>
-
         </section>
-
     </main>
-
-
-
-    <footer class="bg-slate-900 text-white py-16">
-    <!-- INSTRUCCIONES DE USO Y CONTACTO -->
-    <section class="max-w-6xl mx-auto px-6 mb-8">
-        <div class="bg-slate-800 rounded-xl p-6 text-slate-100 text-sm">
-            <h4 class="font-bold mb-2">¿Cómo usar esta página?</h4>
-            <ul class="list-disc pl-5 mb-2">
-                <li>Completa el formulario con tus datos y la descripción de tu proyecto.</li>
-                <li>Revisa el borrador de correo generado y envíalo a <a href="mailto:navacerrada25@gmail.com" class="text-blue-300 underline">navacerrada25@gmail.com</a>.</li>
-                <li>Guarda el correo enviado y espera respuesta.</li>
-                <li>Para dudas o soporte, escribe a <a href="mailto:navacerrada25@gmail.com" class="text-blue-300 underline">navacerrada25@gmail.com</a>.</li>
-            </ul>
-            <p class="mt-2">Esta página es autoconclusiva y no requiere instalación adicional. <br> <span class="italic">Última edición: Octubre 2025</span></p>
-        </div>
-    </section>
-    <!-- FIN INSTRUCCIONES -->
-    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" class="fixed bottom-6 right-6 z-50 bg-blue-600 text-white rounded-full shadow-lg p-4 md:hidden hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300 transition-all">
-        ↑
-    </button>
-
-        <div class="max-w-6xl mx-auto px-6">
-
-            <div class="grid gap-12 md:grid-cols-3 mb-12">
-
+    <footer class="bg-slate-900 text-white">
+        <div class="mx-auto max-w-6xl space-y-12 px-6 py-16">
+            <section class="rounded-xl bg-slate-800 p-6 text-sm text-slate-100">
+                <h4 class="text-base font-bold text-white">¿Cómo usar esta página?</h4>
+                <ul class="mt-3 list-disc space-y-2 pl-5">
+                    <li>Completa el formulario con tus datos y la descripción de tu proyecto.</li>
+                    <li>Revisa el borrador de correo generado y envíalo a <a href="mailto:navacerrada25@gmail.com" class="text-blue-300 underline">navacerrada25@gmail.com</a>.</li>
+                    <li>Guarda el correo enviado y espera respuesta en un máximo de 7 días.</li>
+                    <li>Para dudas o soporte, escribe a <a href="mailto:navacerrada25@gmail.com" class="text-blue-300 underline">navacerrada25@gmail.com</a>.</li>
+                </ul>
+                <p class="mt-3 text-xs text-slate-300">Esta página es autoconclusiva y no requiere instalación adicional.</p>
+            </section>
+            <div class="grid gap-12 md:grid-cols-3">
                 <div>
-
-                    <h3 class="text-2xl font-bold mb-4">Navacerrada25</h3>
-
-                    <p class="text-slate-400 leading-relaxed">Impulsado por fellows de Acumen para hacer realidad proyectos de impacto social en comunidades locales.</p>
-
+                    <h3 class="text-2xl font-bold">Navacerrada25</h3>
+                    <p class="mt-3 leading-relaxed text-slate-300">Impulsado por Fellows de Acumen para hacer realidad proyectos de impacto social en comunidades locales.</p>
                 </div>
-
                 <div>
+                    <h4 class="text-lg font-semibold">Enlaces</h4>
+                    <ul class="mt-4 space-y-2 text-slate-300">
+                        <li><a href="https://fellowship.acumenacademy.org/es/spain" class="transition hover:text-blue-300" target="_blank" rel="noopener noreferrer">Programa Fellows</a></li>
+                        <li><a href="https://blog.acumenacademy.org/conoce-a-la-cohorte-2025-de-fellows-en-espa%C3%B1a" class="transition hover:text-blue-300" target="_blank" rel="noopener noreferrer">Cohorte 2025</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold">Contacto</h4>
+                    <p class="mt-4 text-slate-300">navacerrada25@gmail.com</p>
+                    <p class="mt-2 text-sm text-slate-400">Madrid · España</p>
+                </div>
+            </div>
+            <div class="flex flex-col gap-3 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
+                <p>© 2025 Navacerrada25. Todos los derechos reservados.</p>
+                <p>Última edición: Octubre 2025.</p>
+            </div>
+        </div>
+    </footer>
 
-                    <h4 class="text-lg font-semibold mb-4">Enlaces</h4>
-
-                    <ul class="space-y-2 text-slate-400">
-
-                        <li><a href="https://fellowship.acumenacademy.org/es/spain" class="hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">Programa Fellows</a></li>
-
-                        <li><a href="https://blog.acumenacademy.org/conoce-a-la-cohorte-2025-de-fellows-en-espa%C3%B1a" class="hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">Cohorte 2025</a></li>
+    <button id="backToTop" type="button" class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300 opacity-0 pointer-events-none" aria-label="Volver arriba">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 11l7-7 7 7"></path>
+            <path d="M12 18V4"></path>
+        </svg>
+    </button>
     <script>
-    // Textarea live counters
-    const textareaConfigs = [
-        { field: 'problema', counter: 'problemaCount' },
-        { field: 'solucion', counter: 'solucionCount' },
-        { field: 'impacto', counter: 'impactoCount' },
-        { field: 'apoyo', counter: 'apoyoCount' }
-    ];
-    textareaConfigs.forEach(({ field, counter }) => {
-        const textarea = document.getElementById(field);
-        const counterEl = document.getElementById(counter);
-        if (!textarea || !counterEl) return;
-        const updateCount = () => {
-            counterEl.textContent = textarea.value.length;
-        };
-        textarea.addEventListener('input', updateCount);
-        updateCount();
-    });
+        const textareaConfigs = [
+            { field: 'problema', counter: 'problemaCount' },
+            { field: 'solucion', counter: 'solucionCount' },
+            { field: 'impacto', counter: 'impactoCount' },
+            { field: 'apoyo', counter: 'apoyoCount' }
+        ];
 
-    // Form validation and submission
-    const form = document.getElementById('applicationForm');
-    const submitButton = document.getElementById('submitButton');
-    const formContainer = document.getElementById('formContainer');
-    const errorBox = document.getElementById('formErrors');
-    const successMessage = document.getElementById('successMessage');
+        textareaConfigs.forEach(({ field, counter }) => {
+            const textarea = document.getElementById(field);
+            const counterEl = document.getElementById(counter);
+            if (!textarea || !counterEl) return;
 
-    const requiredFields = [
-        { id: 'nombre', label: 'Nombre completo' },
-        { id: 'email', label: 'Email' },
-        { id: 'telefono', label: 'Teléfono' },
-        { id: 'ubicacion', label: 'Ubicación del proyecto' },
-        { id: 'nombreAval', label: 'Nombre del Fellow que te avala' },
-        { id: 'emailAval', label: 'Email del Fellow' },
-        { id: 'estadoProyecto', label: 'Estado del proyecto' },
-        { id: 'problema', label: 'El problema en tu comunidad' },
-        { id: 'solucion', label: 'Tu solución' },
-        { id: 'impacto', label: 'Impacto esperado' },
-        { id: 'apoyo', label: 'Apoyo que necesitas' }
-    ];
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\+?\d[\d\s\-]{6,}$/;
+            const updateCount = () => {
+                counterEl.textContent = textarea.value.length.toString();
+            };
 
-    function showErrors(messages) {
-        if (!messages.length) {
-            errorBox.classList.add('hidden');
-            errorBox.innerHTML = '';
-            return;
-        }
-        errorBox.innerHTML = '<p class="font-semibold mb-2">Revisa estos campos:</p><ul class="list-disc pl-5 space-y-1"></ul>';
-        const list = errorBox.querySelector('ul');
-        messages.forEach((message) => {
-            const li = document.createElement('li');
-            li.textContent = message;
-            list.appendChild(li);
+            textarea.addEventListener('input', updateCount);
+            updateCount();
         });
-        errorBox.classList.remove('hidden');
-        errorBox.focus();
-    }
 
-    function buildPlainTextSummary(data) {
+        const form = document.getElementById('applicationForm');
+        const submitButton = document.getElementById('submitButton');
+        const spinner = document.getElementById('spinner');
+        const submitText = document.getElementById('submitText');
+        const formContainer = document.getElementById('formContainer');
+        const successMessage = document.getElementById('successMessage');
+        const errorBox = document.getElementById('formErrors');
+        const clipboardFeedback = document.getElementById('clipboardFeedback');
+        const summaryDetails = document.getElementById('summaryDetails');
+        const summaryContent = document.getElementById('summaryContent');
+        const enviosCounterMsg = document.getElementById('enviosCounterMsg');
+        const newApplicationButton = document.getElementById('newApplicationButton');
+        const readinessForm = document.getElementById('readinessForm');
+        const readinessSelects = readinessForm ? readinessForm.querySelectorAll('[data-score]') : [];
+        const scoreValue = document.getElementById('scoreValue');
+        const scoreMessage = document.getElementById('scoreMessage');
+        const resetReadinessButton = document.getElementById('resetReadiness');
+        const MAILTO_SAFE_LIMIT = 1900;
+
+        const requiredFields = [
+            { id: 'nombre', label: 'Nombre completo' },
+            { id: 'email', label: 'Email' },
+            { id: 'telefono', label: 'Teléfono' },
+            { id: 'ubicacion', label: 'Ubicación del proyecto' },
+            { id: 'nombreAval', label: 'Nombre del Fellow que te avala' },
+            { id: 'emailAval', label: 'Email del Fellow' },
+            { id: 'estadoProyecto', label: 'Estado del proyecto' },
+            { id: 'problema', label: 'El problema en tu comunidad' },
+            { id: 'solucion', label: 'Tu solución' },
+            { id: 'impacto', label: 'Impacto esperado' },
+            { id: 'apoyo', label: 'Apoyo que necesitas' }
+        ];
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^\+?\d[\d\s\-]{6,}$/;
+
+        function setLoading(isLoading) {
+            if (!submitButton) return;
+            submitButton.disabled = isLoading;
+            submitButton.classList.toggle('opacity-70', isLoading);
+            submitButton.classList.toggle('cursor-not-allowed', isLoading);
+            if (spinner) spinner.classList.toggle('hidden', !isLoading);
+            if (submitText) submitText.classList.toggle('hidden', isLoading);
+        }
+
+        function showErrors(messages) {
+            if (!errorBox) return;
+            if (!messages.length) {
+                errorBox.classList.add('hidden');
+                errorBox.innerHTML = '';
+                return;
+            }
+
+            const listItems = messages.map((message) => `<li>${message}</li>`).join('');
+            errorBox.innerHTML = `<p class="font-semibold mb-2">Revisa estos campos:</p><ul class="list-disc pl-5 space-y-1">${listItems}</ul>`;
+            errorBox.classList.remove('hidden');
+            errorBox.focus();
+        }
+
+        function resetFormUI() {
+            if (!form) return;
+            form.reset();
+            textareaConfigs.forEach(({ counter }) => {
+                const counterEl = document.getElementById(counter);
+                if (counterEl) counterEl.textContent = '0';
+            });
+        }
+
+        function toggleSuccessView(show) {
+            if (!formContainer || !successMessage) return;
+            if (show) {
+                formContainer.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                successMessage.focus();
+            } else {
+                formContainer.classList.remove('hidden');
+                successMessage.classList.add('hidden');
+            }
+        }
+
+        function buildPlainTextSummary(data) {
         return [
             'Postulación Navacerrada25',
             '================================',
-            '',
-            'DATOS PERSONALES',
-            '-----------------',
-            `Nombre completo: ${data.nombre}`,
-            `Email: ${data.email}`,
-            `Teléfono: ${data.telefono}`,
-            `Ubicación del proyecto: ${data.ubicacion}`,
-            '',
-            'AVAL DEL FELLOW',
-            '----------------',
-            `Nombre del Fellow: ${data.nombreAval}`,
-            `Email del Fellow: ${data.emailAval}`,
-            '',
-            'DETALLES DEL PROYECTO',
-            '----------------------',
-            `Estado del proyecto: ${data.estadoProyecto}`,
-            '',
-            'Problema identificado:',
-            data.problema,
-            '',
-            'Solución propuesta:',
-            data.solucion,
-            '',
-            'Impacto esperado:',
-            data.impacto,
-            '',
-            'Apoyo solicitado a Navacerrada25:',
-            data.apoyo,
-            '',
-            '---',
+                '',
+                'DATOS PERSONALES',
+                '-----------------',
+                `Nombre completo: ${data.nombre}`,
+                `Email: ${data.email}`,
+                `Teléfono: ${data.telefono}`,
+                `Ubicación del proyecto: ${data.ubicacion}`,
+                '',
+                'AVAL DEL FELLOW',
+                '----------------',
+                `Nombre del Fellow: ${data.nombreAval}`,
+                `Email del Fellow: ${data.emailAval}`,
+                '',
+                'DETALLES DEL PROYECTO',
+                '----------------------',
+                `Estado del proyecto: ${data.estadoProyecto}`,
+                '',
+                'Problema identificado:',
+                data.problema,
+                '',
+                'Solución propuesta:',
+                data.solucion,
+                '',
+                'Impacto esperado:',
+                data.impacto,
+                '',
+                'Apoyo solicitado a Navacerrada25:',
+                data.apoyo,
+                '',
+                '---',
             'Postulación generada desde navacerrada25.html'
         ].join('\n');
     }
 
-    async function copyToClipboard(text) {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            try {
-                await navigator.clipboard.writeText(text);
-                return true;
-            } catch (e) {
-                // fallback
-            }
-        }
-        try {
-            const ta = document.createElement('textarea');
-            ta.style.position = 'fixed';
-            ta.style.left = '-9999px';
-            ta.value = text;
-            document.body.appendChild(ta);
-            ta.select();
-            const ok = document.execCommand('copy');
-            document.body.removeChild(ta);
-            return !!ok;
-        } catch (e) {
-            alert('Tu navegador no permite copiar al portapapeles automáticamente. Por favor, copia el texto manualmente.');
-            return false;
-        }
-    }
+        function updateReadinessScore() {
+            if (!readinessSelects.length) return;
+            const maxScore = readinessSelects.length * 2;
+            let total = 0;
+            let answered = 0;
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.classList.add('opacity-70', 'cursor-not-allowed');
-            const spinner = document.getElementById('spinner');
-            const submitText = document.getElementById('submitText');
-            if (spinner) spinner.classList.remove('hidden');
-            if (submitText) submitText.classList.add('hidden');
-        }
-        const formData = {};
-        requiredFields.forEach(({ id }) => {
-            const field = document.getElementById(id);
-            formData[id] = field ? field.value.trim() : '';
-        });
-        const errors = [];
-        requiredFields.forEach(({ id, label }) => {
-            if (!formData[id]) {
-                errors.push(`${label} es obligatorio.`);
-            }
-        });
-        if (formData.email && !emailRegex.test(formData.email)) {
-            errors.push('El email personal no tiene un formato válido.');
-        }
-        if (formData.emailAval && !emailRegex.test(formData.emailAval)) {
-            errors.push('El email del Fellow no tiene un formato válido.');
-        }
-        if (formData.telefono && !phoneRegex.test(formData.telefono)) {
-            errors.push('El teléfono tiene un formato inválido. Usa, por ejemplo, +34 600 000 000.');
-        }
-        if (errors.length) {
-            showErrors(errors);
-            if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
-                const spinner = document.getElementById('spinner');
-                const submitText = document.getElementById('submitText');
-                if (spinner) spinner.classList.add('hidden');
-                if (submitText) submitText.classList.remove('hidden');
-            }
-            return;
-        }
-        showErrors([]);
-        const plainText = buildPlainTextSummary(formData);
-        const subject = `Postulación Navacerrada25 - ${formData.nombre}`;
-        const mailtoLink = `mailto:navacerrada25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(plainText)}`;
-        const copied = await copyToClipboard(plainText);
-        if (!copied) {
-            console.warn('No fue posible copiar automáticamente al portapapeles.');
-        }
-        const MAILTO_SAFE_LIMIT = 1900;
-        if (mailtoLink.length > MAILTO_SAFE_LIMIT) {
-            if (form) form.reset();
-            textareaConfigs.forEach(({ field, counter }) => {
-                const counterEl = document.getElementById(counter);
-                if (counterEl) counterEl.textContent = '0';
+            readinessSelects.forEach((select) => {
+                const value = select.value.trim();
+                if (value === '') {
+                    return;
+                }
+                total += Number(value);
+                answered += 1;
             });
-            if (formContainer && successMessage) {
-                formContainer.classList.add('hidden');
-                successMessage.classList.remove('hidden');
-                successMessage.focus();
-                // Contador de envíos exitosos
-                let count = localStorage.getItem('navacerrada25_envios') || 0;
-                count = parseInt(count) + 1;
-                localStorage.setItem('navacerrada25_envios', count);
-                const counterMsg = document.getElementById('enviosCounterMsg');
-                if (counterMsg) counterMsg.textContent = `Has enviado ${count} postulaciones desde este dispositivo.`;
-            }
-            if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
-                const spinner = document.getElementById('spinner');
-                const submitText = document.getElementById('submitText');
-                if (spinner) spinner.classList.add('hidden');
-                if (submitText) submitText.classList.remove('hidden');
-            }
-            alert('El contenido es extenso. Hemos copiado la postulación al portapapeles. Abre tu gestor de correo y pega manualmente el texto en un nuevo mensaje dirigido a navacerrada25@gmail.com.');
-            return;
-        }
-        if (form) form.reset();
-        textareaConfigs.forEach(({ field, counter }) => {
-            const counterEl = document.getElementById(counter);
-            if (counterEl) counterEl.textContent = '0';
-        });
-        if (formContainer && successMessage) {
-            formContainer.classList.add('hidden');
-            successMessage.classList.remove('hidden');
-            successMessage.focus();
-            let count = localStorage.getItem('navacerrada25_envios') || 0;
-            count = parseInt(count) + 1;
-            localStorage.setItem('navacerrada25_envios', count);
-            const counterMsg = document.getElementById('enviosCounterMsg');
-            if (counterMsg) counterMsg.textContent = `Has enviado ${count} postulaciones desde este dispositivo.`;
-        }
-        const tempLink = document.createElement('a');
-        tempLink.href = mailtoLink;
-        tempLink.className = 'hidden';
-        tempLink.setAttribute('aria-hidden', 'true');
-        document.body.appendChild(tempLink);
-        tempLink.click();
-        document.body.removeChild(tempLink);
-        if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
-            const spinner = document.getElementById('spinner');
-            const submitText = document.getElementById('submitText');
-            if (spinner) spinner.classList.add('hidden');
-            if (submitText) submitText.classList.remove('hidden');
-        }
-    }
 
-    if (form) {
-        form.addEventListener('submit', handleSubmit);
-    }
+            if (scoreValue) {
+                scoreValue.textContent = `${total}/${maxScore}`;
+            }
 
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener('click', (event) => {
-            const targetSelector = anchor.getAttribute('href');
-            if (!targetSelector || targetSelector.length <= 1) return;
-            const target = document.querySelector(targetSelector);
-            if (!target) return;
+            if (!scoreMessage) return;
+
+            if (answered < readinessSelects.length) {
+                scoreMessage.textContent = 'Responde todas las preguntas para ver recomendaciones personalizadas.';
+                return;
+            }
+
+            if (total >= 8) {
+                scoreMessage.textContent = 'Tienes bases s\u00f3lidas. Podemos enfocarnos en conexiones, mentor\u00eda avanzada y prepararte para rutas de financiaci\u00f3n externas.';
+            } else if (total >= 5) {
+                scoreMessage.textContent = 'Buen punto de partida. Alineemos tus pr\u00f3ximos pasos, reforcemos evidencias y definamos el apoyo que necesitas.';
+            } else {
+                scoreMessage.textContent = 'Todav\u00eda es pronto. Te ayudaremos a profundizar en el problema, acercarte a la comunidad y priorizar tu piloto antes de buscar financiaci\u00f3n.';
+            }
+        }
+
+        if (readinessSelects.length) {
+            readinessSelects.forEach((select) => {
+                select.addEventListener('change', updateReadinessScore);
+            });
+            updateReadinessScore();
+        }
+
+        if (resetReadinessButton && readinessForm) {
+            resetReadinessButton.addEventListener('click', () => {
+                readinessForm.reset();
+                updateReadinessScore();
+                const firstSelect = readinessForm.querySelector('[data-score]');
+                if (firstSelect) firstSelect.focus();
+            });
+        }
+
+    async function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    return true;
+                } catch (error) {
+                    console.warn('No se pudo copiar con la API moderna:', error);
+                }
+            }
+            try {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.setAttribute('readonly', '');
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                document.body.appendChild(textarea);
+                textarea.select();
+                const ok = document.execCommand('copy');
+                document.body.removeChild(textarea);
+                return ok;
+            } catch (error) {
+                console.warn('No se pudo copiar con el método alternativo:', error);
+                return false;
+            }
+        }
+
+        async function handleSubmit(event) {
             event.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-    });
-    </script>
+            setLoading(true);
 
+            const formData = {};
+            requiredFields.forEach(({ id }) => {
+                const field = document.getElementById(id);
+                formData[id] = field ? field.value.trim() : '';
+            });
 
-
-            if (submitButton) {
-
-                submitButton.disabled = false;
-
-                submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
-
+            const errors = [];
+            requiredFields.forEach(({ id, label }) => {
+                if (!formData[id]) {
+                    errors.push(`${label} es obligatorio.`);
+                }
+            });
+            if (formData.email && !emailRegex.test(formData.email)) {
+                errors.push('El email personal no tiene un formato válido.');
+            }
+            if (formData.emailAval && !emailRegex.test(formData.emailAval)) {
+                errors.push('El email del Fellow no tiene un formato válido.');
+            }
+            if (formData.telefono && !phoneRegex.test(formData.telefono)) {
+                errors.push('El teléfono tiene un formato inválido. Usa, por ejemplo, +34 600 000 000.');
             }
 
+            if (errors.length) {
+                showErrors(errors);
+                setLoading(false);
+                return;
+            }
+
+            showErrors([]);
+
+            const summary = buildPlainTextSummary(formData);
+            const subject = `Postulación Navacerrada25 - ${formData.nombre}`;
+            const mailtoLink = `mailto:navacerrada25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(summary)}`;
+            const copied = await copyToClipboard(summary);
+            const overLimit = mailtoLink.length > MAILTO_SAFE_LIMIT;
+
+            resetFormUI();
+            toggleSuccessView(true);
+
+            if (clipboardFeedback) {
+                clipboardFeedback.textContent = copied
+                    ? 'Hemos copiado tu postulación al portapapeles.'
+                    : 'No pudimos copiar tu postulación automáticamente. Copia el resumen manualmente.';
+            }
+            if (summaryDetails && summaryContent) {
+                if (!copied || overLimit) {
+                    summaryDetails.classList.remove('hidden');
+                    summaryContent.textContent = summary;
+                } else {
+                    summaryDetails.classList.add('hidden');
+                    summaryContent.textContent = '';
+                }
+            }
+            if (enviosCounterMsg) {
+                let count = parseInt(localStorage.getItem('navacerrada25_envios') || '0', 10);
+                if (!Number.isFinite(count)) {
+                    count = 0;
+                }
+                count += 1;
+                localStorage.setItem('navacerrada25_envios', count.toString());
+                enviosCounterMsg.textContent = `Has preparado ${count} postulaciones desde este dispositivo.`;
+            }
+
+            if (overLimit) {
+                if (clipboardFeedback) {
+                    clipboardFeedback.textContent += ' El contenido es largo, pega la información en tu correo de forma manual.';
+                }
+                setLoading(false);
+                return;
+            }
+
+            const tempLink = document.createElement('a');
+            tempLink.href = mailtoLink;
+            tempLink.className = 'sr-only';
+            tempLink.setAttribute('aria-hidden', 'true');
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            tempLink.remove();
+
+            setLoading(false);
         }
-
-
 
         if (form) {
-
             form.addEventListener('submit', handleSubmit);
-
         }
 
+        if (newApplicationButton) {
+            newApplicationButton.addEventListener('click', () => {
+                toggleSuccessView(false);
+                if (clipboardFeedback) clipboardFeedback.textContent = '';
+                if (summaryDetails) summaryDetails.classList.add('hidden');
+                if (summaryContent) summaryContent.textContent = '';
+                const firstField = document.getElementById('nombre');
+                if (firstField) firstField.focus();
+            });
+        }
 
+        const pageNav = document.getElementById('pageNav');
 
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        function updateNavAppearance() {
+            if (!pageNav) return;
+            if (window.scrollY > 16) {
+                pageNav.classList.add('is-scrolled');
+            } else {
+                pageNav.classList.remove('is-scrolled');
+            }
+        }
 
-            anchor.addEventListener('click', (event) => {
+        updateNavAppearance();
+        window.addEventListener('scroll', updateNavAppearance);
 
-                const targetSelector = anchor.getAttribute('href');
+        const navLinks = document.querySelectorAll('[data-nav-target]');
+        const sections = document.querySelectorAll('[data-section]');
 
-                if (!targetSelector || targetSelector.length <= 1) return;
+        if (sections.length && navLinks.length) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+                        const sectionId = entry.target.getAttribute('id');
+                        navLinks.forEach((link) => {
+                            const href = link.getAttribute('href');
+                            if (!href || !sectionId) return;
+                            const isActive = href === `#${sectionId}`;
+                            if (isActive) {
+                                link.classList.add('text-white', 'font-semibold');
+                                link.classList.remove('text-blue-100/80');
+                                link.setAttribute('aria-current', 'page');
+                            } else {
+                                link.classList.remove('text-white', 'font-semibold');
+                                link.classList.add('text-blue-100/80');
+                                link.setAttribute('aria-current', 'false');
+                            }
+                        });
+                    });
+                },
+                { threshold: 0.55 }
+            );
+            sections.forEach((section) => observer.observe(section));
+        }
 
-                const target = document.querySelector(targetSelector);
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
 
-                if (!target) return;
-
-
-
-                event.preventDefault();
-
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
+        if (menuToggle && mobileNav) {
+            menuToggle.addEventListener('click', () => {
+                const isHidden = mobileNav.classList.toggle('hidden');
+                menuToggle.setAttribute('aria-expanded', String(!isHidden));
             });
 
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !mobileNav.classList.contains('hidden')) {
+                    mobileNav.classList.add('hidden');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                if (mobileNav && !mobileNav.classList.contains('hidden')) {
+                    mobileNav.classList.add('hidden');
+                    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
         });
 
+        const backToTopButton = document.getElementById('backToTop');
+        if (backToTopButton) {
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+        }
     </script>
-
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
