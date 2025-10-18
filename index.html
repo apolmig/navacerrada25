@@ -1,4 +1,4 @@
-    <p id="enviosCounterMsg" class="text-sm text-teal-700 mb-4"></p>
+    <p id="enviosCounterMsg" class="text-sm text-teal-700 mb-4" aria-live="polite"></p>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -681,8 +681,7 @@
 
                                 <label for="nombre" class="block text-sm font-semibold text-slate-700 mb-2">Nombre completo *</label>
 
-                                <input type="text" id="nombre" name="nombre" autocomplete="name" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Tu nombre completo">
-                                <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-required="true" aria-describedby="nombreHelp" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Tu nombre completo">
+                                <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-required="true" aria-describedby="nombreHelp" maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Tu nombre completo">
 
                             </div>
 
@@ -690,7 +689,7 @@
 
                                 <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Email *</label>
 
-                                <input type="email" id="email" name="email" autocomplete="email" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="tu@email.com">
+                                <input type="email" id="email" name="email" autocomplete="email" required maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="tu@email.com">
 
                             </div>
 
@@ -698,7 +697,8 @@
 
                                 <label for="telefono" class="block text-sm font-semibold text-slate-700 mb-2">Teléfono *</label>
 
-                                <input type="tel" id="telefono" name="telefono" autocomplete="tel" required inputmode="tel" pattern="^\+?\d[\d\s\-]{6,}$" title="Formato válido, p. ej. +34 600 000 000" maxlength="20" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="+34 600 000 000">
+                                <input type="tel" id="telefono" name="telefono" autocomplete="tel" required inputmode="tel" pattern="^\+?\d[\d\s\-]{6,}$" title="Formato válido, p. ej. +34 600 000 000" maxlength="20" aria-describedby="telefonoHelp" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="+34 600 000 000">
+                                <span id="telefonoHelp" class="text-xs text-slate-500">Ejemplo: +34 600 000 000</span>
 
                             </div>
 
@@ -706,7 +706,7 @@
 
                                 <label for="ubicacion" class="block text-sm font-semibold text-slate-700 mb-2">Ubicación del proyecto *</label>
 
-                                <input type="text" id="ubicacion" name="ubicacion" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Barrio o zona rural específica">
+                                <input type="text" id="ubicacion" name="ubicacion" required maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Barrio o zona rural específica">
 
                             </div>
 
@@ -738,7 +738,7 @@
 
                                 <label for="nombreAval" class="block text-sm font-semibold text-slate-700 mb-2">Nombre del Fellow que te avala *</label>
 
-                                <input type="text" id="nombreAval" name="nombreAval" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Nombre completo del Fellow">
+                                <input type="text" id="nombreAval" name="nombreAval" required maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Nombre completo del Fellow">
 
                             </div>
 
@@ -746,7 +746,7 @@
 
                                 <label for="emailAval" class="block text-sm font-semibold text-slate-700 mb-2">Email del Fellow *</label>
 
-                                <input type="email" id="emailAval" name="emailAval" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="email@ejemplo.com">
+                                <input type="email" id="emailAval" name="emailAval" required maxlength="80" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="email@ejemplo.com">
 
                             </div>
 
@@ -995,242 +995,180 @@
                         <li><a href="https://fellowship.acumenacademy.org/es/spain" class="hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">Programa Fellows</a></li>
 
                         <li><a href="https://blog.acumenacademy.org/conoce-a-la-cohorte-2025-de-fellows-en-espa%C3%B1a" class="hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">Cohorte 2025</a></li>
-
-                        <li><a href="https://acumenacademy.org" class="hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">Acumen Academy</a></li>
-
-                    </ul>
-
-                </div>
-
-                <div>
-
-                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
-
-                    <p><a href="mailto:navacerrada25@gmail.com" class="text-slate-400 hover:text-blue-300 transition-colors">navacerrada25@gmail.com</a></p>
-
-                    <p class="mt-3 text-sm text-slate-500 leading-relaxed">Para consultas sobre avales, mentorías o el proceso de postulación.</p>
-
-                </div>
-
-            </div>
-
-            <div class="border-t border-slate-800 pt-8 text-center">
-
-                <p class="text-sm text-slate-500">© 2025 Navacerrada25 · Impulsado por fellows de Acumen</p>
-
-            </div>
-
-        </div>
-
-    </footer>
-
     <script>
-        const textareaConfigs = [
-            { field: 'problema', counter: 'problemaCount' },
-            { field: 'solucion', counter: 'solucionCount' },
-            { field: 'impacto', counter: 'impactoCount' },
-            { field: 'apoyo', counter: 'apoyoCount' }
-        ];
+    // Textarea live counters
+    const textareaConfigs = [
+        { field: 'problema', counter: 'problemaCount' },
+        { field: 'solucion', counter: 'solucionCount' },
+        { field: 'impacto', counter: 'impactoCount' },
+        { field: 'apoyo', counter: 'apoyoCount' }
+    ];
+    textareaConfigs.forEach(({ field, counter }) => {
+        const textarea = document.getElementById(field);
+        const counterEl = document.getElementById(counter);
+        if (!textarea || !counterEl) return;
+        const updateCount = () => {
+            counterEl.textContent = textarea.value.length;
+        };
+        textarea.addEventListener('input', updateCount);
+        updateCount();
+    });
 
-        textareaConfigs.forEach(({ field, counter }) => {
-            const textarea = document.getElementById(field);
-            const counterEl = document.getElementById(counter);
-            if (!textarea || !counterEl) return;
-            const updateCount = () => {
-                counterEl.textContent = textarea.value.length;
-            };
-            textarea.addEventListener('input', updateCount);
-            updateCount();
+    // Form validation and submission
+    const form = document.getElementById('applicationForm');
+    const submitButton = document.getElementById('submitButton');
+    const formContainer = document.getElementById('formContainer');
+    const errorBox = document.getElementById('formErrors');
+    const successMessage = document.getElementById('successMessage');
+
+    const requiredFields = [
+        { id: 'nombre', label: 'Nombre completo' },
+        { id: 'email', label: 'Email' },
+        { id: 'telefono', label: 'Teléfono' },
+        { id: 'ubicacion', label: 'Ubicación del proyecto' },
+        { id: 'nombreAval', label: 'Nombre del Fellow que te avala' },
+        { id: 'emailAval', label: 'Email del Fellow' },
+        { id: 'estadoProyecto', label: 'Estado del proyecto' },
+        { id: 'problema', label: 'El problema en tu comunidad' },
+        { id: 'solucion', label: 'Tu solución' },
+        { id: 'impacto', label: 'Impacto esperado' },
+        { id: 'apoyo', label: 'Apoyo que necesitas' }
+    ];
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\+?\d[\d\s\-]{6,}$/;
+
+    function showErrors(messages) {
+        if (!messages.length) {
+            errorBox.classList.add('hidden');
+            errorBox.innerHTML = '';
+            return;
+        }
+        errorBox.innerHTML = '<p class="font-semibold mb-2">Revisa estos campos:</p><ul class="list-disc pl-5 space-y-1"></ul>';
+        const list = errorBox.querySelector('ul');
+        messages.forEach((message) => {
+            const li = document.createElement('li');
+            li.textContent = message;
+            list.appendChild(li);
         });
+        errorBox.classList.remove('hidden');
+        errorBox.focus();
+    }
 
-        const form = document.getElementById('applicationForm');
-        const submitButton = document.getElementById('submitButton');
-        const formContainer = document.getElementById('formContainer');
-        const successMessage = document.getElementById('successMessage');
-        const errorBox = document.getElementById('formErrors');
+    function buildPlainTextSummary(data) {
+        return [
+            'Postulación Navacerrada25',
+            '================================',
+            '',
+            'DATOS PERSONALES',
+            '-----------------',
+            `Nombre completo: ${data.nombre}`,
+            `Email: ${data.email}`,
+            `Teléfono: ${data.telefono}`,
+            `Ubicación del proyecto: ${data.ubicacion}`,
+            '',
+            'AVAL DEL FELLOW',
+            '----------------',
+            `Nombre del Fellow: ${data.nombreAval}`,
+            `Email del Fellow: ${data.emailAval}`,
+            '',
+            'DETALLES DEL PROYECTO',
+            '----------------------',
+            `Estado del proyecto: ${data.estadoProyecto}`,
+            '',
+            'Problema identificado:',
+            data.problema,
+            '',
+            'Solución propuesta:',
+            data.solucion,
+            '',
+            'Impacto esperado:',
+            data.impacto,
+            '',
+            'Apoyo solicitado a Navacerrada25:',
+            data.apoyo,
+            '',
+            '---',
+            'Postulación generada desde navacerrada25.html'
+        ].join('\n');
+    }
 
-        const requiredFields = [
-            { id: 'nombre', label: 'Nombre completo' },
-            { id: 'email', label: 'Email' },
-            { id: 'telefono', label: 'Teléfono' },
-            { id: 'ubicacion', label: 'Ubicación del proyecto' },
-            { id: 'nombreAval', label: 'Nombre del Fellow que te avala' },
-            { id: 'emailAval', label: 'Email del Fellow' },
-            { id: 'estadoProyecto', label: 'Estado del proyecto' },
-            { id: 'problema', label: 'El problema en tu comunidad' },
-            { id: 'solucion', label: 'Tu solución' },
-            { id: 'impacto', label: 'Impacto esperado' },
-            { id: 'apoyo', label: 'Apoyo que necesitas' }
-        ];
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneRegex = /^\+?\d[\d\s\-]{6,}$/;
-
-        function showErrors(messages) {
-            if (!messages.length) {
-                errorBox.classList.add('hidden');
-                errorBox.innerHTML = '';
-                return;
-            }
-            errorBox.innerHTML = '<p class="font-semibold mb-2">Revisa estos campos:</p><ul class="list-disc pl-5 space-y-1"></ul>';
-            const list = errorBox.querySelector('ul');
-            messages.forEach((message) => {
-                const li = document.createElement('li');
-                li.textContent = message;
-                list.appendChild(li);
-            });
-            errorBox.classList.remove('hidden');
-            errorBox.focus();
-        }
-
-        function buildPlainTextSummary(data) {
-            return [
-                'Postulación Navacerrada25',
-                '================================',
-                '',
-                'DATOS PERSONALES',
-                '-----------------',
-                `Nombre completo: ${data.nombre}`,
-                `Email: ${data.email}`,
-                `Teléfono: ${data.telefono}`,
-                `Ubicación del proyecto: ${data.ubicacion}`,
-                '',
-                'AVAL DEL FELLOW',
-                '----------------',
-                `Nombre del Fellow: ${data.nombreAval}`,
-                `Email del Fellow: ${data.emailAval}`,
-                '',
-                'DETALLES DEL PROYECTO',
-                '----------------------',
-                `Estado del proyecto: ${data.estadoProyecto}`,
-                '',
-                'Problema identificado:',
-                data.problema,
-                '',
-                'Solución propuesta:',
-                data.solucion,
-                '',
-                'Impacto esperado:',
-                data.impacto,
-                '',
-                'Apoyo solicitado a Navacerrada25:',
-                data.apoyo,
-                '',
-                '---',
-                'Postulación generada desde navacerrada25.html'
-            ].join('\n');
-        }
-
-        async function copyToClipboard(text) {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                try {
-                    await navigator.clipboard.writeText(text);
-                    return true;
-                } catch (e) {
-                    // fallback
-                }
-            }
+    async function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
             try {
-                const ta = document.createElement('textarea');
-                ta.style.position = 'fixed';
-                ta.style.left = '-9999px';
-                ta.value = text;
-                document.body.appendChild(ta);
-                ta.select();
-                const ok = document.execCommand('copy');
-                document.body.removeChild(ta);
-                return !!ok;
+                await navigator.clipboard.writeText(text);
+                return true;
             } catch (e) {
-                alert('Tu navegador no permite copiar al portapapeles automáticamente. Por favor, copia el texto manualmente.');
-                return false;
+                // fallback
             }
         }
+        try {
+            const ta = document.createElement('textarea');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            const ok = document.execCommand('copy');
+            document.body.removeChild(ta);
+            return !!ok;
+        } catch (e) {
+            alert('Tu navegador no permite copiar al portapapeles automáticamente. Por favor, copia el texto manualmente.');
+            return false;
+        }
+    }
 
-        async function handleSubmit(event) {
-            event.preventDefault();
-
+    async function handleSubmit(event) {
+        event.preventDefault();
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.classList.add('opacity-70', 'cursor-not-allowed');
+            const spinner = document.getElementById('spinner');
+            const submitText = document.getElementById('submitText');
+            if (spinner) spinner.classList.remove('hidden');
+            if (submitText) submitText.classList.add('hidden');
+        }
+        const formData = {};
+        requiredFields.forEach(({ id }) => {
+            const field = document.getElementById(id);
+            formData[id] = field ? field.value.trim() : '';
+        });
+        const errors = [];
+        requiredFields.forEach(({ id, label }) => {
+            if (!formData[id]) {
+                errors.push(`${label} es obligatorio.`);
+            }
+        });
+        if (formData.email && !emailRegex.test(formData.email)) {
+            errors.push('El email personal no tiene un formato válido.');
+        }
+        if (formData.emailAval && !emailRegex.test(formData.emailAval)) {
+            errors.push('El email del Fellow no tiene un formato válido.');
+        }
+        if (formData.telefono && !phoneRegex.test(formData.telefono)) {
+            errors.push('El teléfono tiene un formato inválido. Usa, por ejemplo, +34 600 000 000.');
+        }
+        if (errors.length) {
+            showErrors(errors);
             if (submitButton) {
-                submitButton.disabled = true;
-                submitButton.classList.add('opacity-70', 'cursor-not-allowed');
+                submitButton.disabled = false;
+                submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
                 const spinner = document.getElementById('spinner');
                 const submitText = document.getElementById('submitText');
-                if (spinner) spinner.classList.remove('hidden');
-                if (submitText) submitText.classList.add('hidden');
+                if (spinner) spinner.classList.add('hidden');
+                if (submitText) submitText.classList.remove('hidden');
             }
-
-            const formData = {};
-            requiredFields.forEach(({ id }) => {
-                const field = document.getElementById(id);
-                formData[id] = field ? field.value.trim() : '';
-            });
-
-            const errors = [];
-
-            requiredFields.forEach(({ id, label }) => {
-                if (!formData[id]) {
-                    errors.push(`${label} es obligatorio.`);
-                }
-            });
-
-            if (formData.email && !emailRegex.test(formData.email)) {
-                errors.push('El email personal no tiene un formato válido.');
-            }
-
-            if (formData.emailAval && !emailRegex.test(formData.emailAval)) {
-                errors.push('El email del Fellow no tiene un formato válido.');
-            }
-
-            if (formData.telefono && !phoneRegex.test(formData.telefono)) {
-                errors.push('El teléfono tiene un formato inválido. Usa, por ejemplo, +34 600 000 000.');
-            }
-
-            if (errors.length) {
-                showErrors(errors);
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
-                }
-                return;
-            }
-
-            showErrors([]);
-
-            const plainText = buildPlainTextSummary(formData);
-            const subject = `Postulación Navacerrada25 - ${formData.nombre}`;
-            const mailtoLink = `mailto:navacerrada25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(plainText)}`;
-
-            const copied = await copyToClipboard(plainText);
-            if (!copied) {
-                console.warn('No fue posible copiar automáticamente al portapapeles.');
-            }
-
-            const MAILTO_SAFE_LIMIT = 1900;
-            if (mailtoLink.length > MAILTO_SAFE_LIMIT) {
-                if (form) form.reset();
-                textareaConfigs.forEach(({ field, counter }) => {
-                    const counterEl = document.getElementById(counter);
-                    if (counterEl) counterEl.textContent = '0';
-                });
-                if (formContainer && successMessage) {
-                    formContainer.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
-                    successMessage.focus();
-                    // Contador de envíos exitosos
-                    let count = localStorage.getItem('navacerrada25_envios') || 0;
-                    count = parseInt(count) + 1;
-                    localStorage.setItem('navacerrada25_envios', count);
-                    const counterMsg = document.getElementById('enviosCounterMsg');
-                    if (counterMsg) counterMsg.textContent = `Has enviado ${count} postulaciones desde este dispositivo.`;
-                }
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
-                }
-                alert('El contenido es extenso. Hemos copiado la postulación al portapapeles. Abre tu gestor de correo y pega manualmente el texto en un nuevo mensaje dirigido a fondonavacerrada25@gmail.com.');
-                alert('El contenido es extenso. Hemos copiado la postulación al portapapeles. Abre tu gestor de correo y pega manualmente el texto en un nuevo mensaje dirigido a navacerrada25@gmail.com.');
-                return;
-            }
-
+            return;
+        }
+        showErrors([]);
+        const plainText = buildPlainTextSummary(formData);
+        const subject = `Postulación Navacerrada25 - ${formData.nombre}`;
+        const mailtoLink = `mailto:navacerrada25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(plainText)}`;
+        const copied = await copyToClipboard(plainText);
+        if (!copied) {
+            console.warn('No fue posible copiar automáticamente al portapapeles.');
+        }
+        const MAILTO_SAFE_LIMIT = 1900;
+        if (mailtoLink.length > MAILTO_SAFE_LIMIT) {
             if (form) form.reset();
             textareaConfigs.forEach(({ field, counter }) => {
                 const counterEl = document.getElementById(counter);
@@ -1240,16 +1178,13 @@
                 formContainer.classList.add('hidden');
                 successMessage.classList.remove('hidden');
                 successMessage.focus();
+                // Contador de envíos exitosos
+                let count = localStorage.getItem('navacerrada25_envios') || 0;
+                count = parseInt(count) + 1;
+                localStorage.setItem('navacerrada25_envios', count);
+                const counterMsg = document.getElementById('enviosCounterMsg');
+                if (counterMsg) counterMsg.textContent = `Has enviado ${count} postulaciones desde este dispositivo.`;
             }
-
-            const tempLink = document.createElement('a');
-            tempLink.href = mailtoLink;
-            tempLink.className = 'hidden';
-            tempLink.setAttribute('aria-hidden', 'true');
-            document.body.appendChild(tempLink);
-            tempLink.click();
-            document.body.removeChild(tempLink);
-
             if (submitButton) {
                 submitButton.disabled = false;
                 submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
@@ -1258,168 +1193,56 @@
                 if (spinner) spinner.classList.add('hidden');
                 if (submitText) submitText.classList.remove('hidden');
             }
+            alert('El contenido es extenso. Hemos copiado la postulación al portapapeles. Abre tu gestor de correo y pega manualmente el texto en un nuevo mensaje dirigido a navacerrada25@gmail.com.');
+            return;
         }
-
-        if (form) {
-            form.addEventListener('submit', handleSubmit);
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener('click', (event) => {
-                const targetSelector = anchor.getAttribute('href');
-                if (!targetSelector || targetSelector.length <= 1) return;
-                const target = document.querySelector(targetSelector);
-                if (!target) return;
-                event.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
+        if (form) form.reset();
+        textareaConfigs.forEach(({ field, counter }) => {
+            const counterEl = document.getElementById(counter);
+            if (counterEl) counterEl.textContent = '0';
         });
+        if (formContainer && successMessage) {
+            formContainer.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+            successMessage.focus();
+            let count = localStorage.getItem('navacerrada25_envios') || 0;
+            count = parseInt(count) + 1;
+            localStorage.setItem('navacerrada25_envios', count);
+            const counterMsg = document.getElementById('enviosCounterMsg');
+            if (counterMsg) counterMsg.textContent = `Has enviado ${count} postulaciones desde este dispositivo.`;
+        }
+        const tempLink = document.createElement('a');
+        tempLink.href = mailtoLink;
+        tempLink.className = 'hidden';
+        tempLink.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
+            const spinner = document.getElementById('spinner');
+            const submitText = document.getElementById('submitText');
+            if (spinner) spinner.classList.add('hidden');
+            if (submitText) submitText.classList.remove('hidden');
+        }
+    }
 
+    if (form) {
+        form.addEventListener('submit', handleSubmit);
+    }
 
-
-        async function handleSubmit(event) {
-
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', (event) => {
+            const targetSelector = anchor.getAttribute('href');
+            if (!targetSelector || targetSelector.length <= 1) return;
+            const target = document.querySelector(targetSelector);
+            if (!target) return;
             event.preventDefault();
-
-
-
-            if (submitButton) {
-
-                submitButton.disabled = true;
-
-                submitButton.classList.add('opacity-70', 'cursor-not-allowed');
-
-            }
-
-
-
-            const formData = {};
-
-            requiredFields.forEach(({ id }) => {
-
-                const field = document.getElementById(id);
-
-                formData[id] = field ? field.value.trim() : '';
-
-            });
-
-
-
-            const errors = [];
-
-
-
-            requiredFields.forEach(({ id, label }) => {
-
-                if (!formData[id]) {
-
-                    errors.push(`${label} es obligatorio.`);
-
-                }
-
-            });
-
-
-
-            if (formData.email && !emailRegex.test(formData.email)) {
-
-                errors.push('El email personal no tiene un formato válido.');
-
-            }
-
-
-
-            if (formData.emailAval && !emailRegex.test(formData.emailAval)) {
-
-                errors.push('El email del Fellow no tiene un formato válido.');
-
-            }
-
-
-
-            if (errors.length) {
-
-                showErrors(errors);
-
-                if (submitButton) {
-
-                    submitButton.disabled = false;
-
-                    submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
-
-                }
-
-                return;
-
-            }
-
-
-
-            showErrors([]);
-
-
-
-            const plainText = buildPlainTextSummary(formData);
-
-            const subject = `Postulación Fondo Navacerrada25 - ${formData.nombre}`;
-
-            const mailtoLink = `mailto:fondonavacerrada25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(plainText)}`;
-
-
-
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-
-                navigator.clipboard.writeText(plainText).catch(() => {});
-
-            }
-
-
-
-            if (form) {
-
-                form.reset();
-
-            }
-
-            textareaConfigs.forEach(({ field, counter }) => {
-
-                const counterEl = document.getElementById(counter);
-
-                if (counterEl) {
-
-                    counterEl.textContent = '0';
-
-                }
-
-            });
-
-
-
-            if (formContainer && successMessage) {
-
-                formContainer.classList.add('hidden');
-
-                successMessage.classList.remove('hidden');
-
-                successMessage.focus();
-
-            }
-
-
-
-            const tempLink = document.createElement('a');
-
-            tempLink.href = mailtoLink;
-
-            tempLink.className = 'hidden';
-
-            tempLink.setAttribute('aria-hidden', 'true');
-
-            document.body.appendChild(tempLink);
-
-            tempLink.click();
-
-            document.body.removeChild(tempLink);
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    </script>
 
 
 
