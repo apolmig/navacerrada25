@@ -81,21 +81,70 @@
         #pageNav .nav-shell,
         #pageNav .nav-shell-mobile {
             transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+            background-color: rgba(248, 250, 252, 0.92);
+            border-color: rgba(148, 163, 184, 0.35);
+            box-shadow: 0 18px 40px -28px rgba(15, 23, 42, 0.32);
+            color: #0f172a;
+        }
+
+        #pageNav .nav-link {
+            color: rgba(15, 23, 42, 0.72);
+        }
+
+        #pageNav .nav-link:hover,
+        #pageNav .nav-link:focus-visible {
+            color: #0f172a;
+        }
+
+        #pageNav .nav-link[aria-current="page"] {
+            color: #0f766e;
+            font-weight: 600;
+        }
+
+        #pageNav .menu-toggle {
+            color: #0f172a;
+            border-color: rgba(148, 163, 184, 0.45);
+        }
+
+        #pageNav .brand-badge {
+            background-color: #0f172a;
+            color: #f8fafc;
         }
 
         #pageNav.is-scrolled .nav-shell {
-            background-color: rgba(15, 23, 42, 0.92);
-            border-color: rgba(148, 163, 184, 0.35);
-            box-shadow: 0 28px 60px -28px rgba(15, 23, 42, 0.55);
+            background-color: rgba(15, 23, 42, 0.96);
+            border-color: transparent;
+            box-shadow: 0 28px 60px -26px rgba(15, 23, 42, 0.6);
+            color: #f8fafc;
         }
 
         #pageNav.is-scrolled .nav-shell-mobile {
             background-color: rgba(15, 23, 42, 0.95);
-            border-color: rgba(148, 163, 184, 0.35);
+            border-color: transparent;
         }
 
-        #pageNav.is-scrolled .nav-link:not(:hover) {
-            color: rgba(226, 232, 240, 0.85);
+        #pageNav.is-scrolled .nav-link {
+            color: rgba(226, 232, 240, 0.82);
+        }
+
+        #pageNav.is-scrolled .nav-link:hover,
+        #pageNav.is-scrolled .nav-link:focus-visible {
+            color: #ffffff;
+        }
+
+        #pageNav.is-scrolled .nav-link[aria-current="page"] {
+            color: #5eead4;
+        }
+
+        #pageNav.is-scrolled .menu-toggle {
+            color: #f8fafc;
+            border-color: rgba(248, 250, 252, 0.4);
+            background-color: transparent;
+        }
+
+        #pageNav.is-scrolled .brand-badge {
+            background-color: rgba(255, 255, 255, 0.16);
+            color: #f8fafc;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -118,23 +167,23 @@
 <body class="bg-slate-50 text-slate-900 antialiased">
     <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:bg-white focus:text-navacerrada-blue focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">Saltar al contenido principal</a>
     <nav id="pageNav" class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:backdrop-blur" aria-label="Navegaci&oacute;n principal">
-        <div class="mx-auto max-w-6xl px-6">
-            <div class="nav-shell flex items-center justify-between gap-4 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-white transition-colors supports-[backdrop-filter]:bg-white/15">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="nav-shell flex items-center justify-between gap-3 rounded-2xl border px-4 py-2.5 text-slate-900 shadow-sm sm:px-5 sm:py-3">
                 <a href="#hero" class="inline-flex items-center gap-3 text-lg font-semibold tracking-wide">
-                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-white shadow-glow">N25</span>
-                    Navacerrada25
+                    <span class="brand-badge inline-flex h-10 w-10 items-center justify-center rounded-xl shadow-glow">N25</span>
+                    <span>Navacerrada25</span>
                 </a>
-                <div class="hidden items-center gap-8 text-sm font-medium lg:flex">
-                    <a href="#porque" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Por&nbsp;qu&eacute;</a>
-                    <a href="#como" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">C&oacute;mo funciona</a>
-                    <a href="#autoevaluacion" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Autoevaluaci&oacute;n</a>
-                    <a href="#mentores" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Mentores</a>
-                    <a href="#formulario" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Postula</a>
-                    <a href="#faq" data-nav-target class="nav-link text-blue-100/80 transition-colors hover:text-white">Preguntas</a>
+                <div class="hidden items-center gap-7 text-sm font-medium lg:flex">
+                    <a href="#porque" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Por&nbsp;qu&eacute;</a>
+                    <a href="#como" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">C&oacute;mo funciona</a>
+                    <a href="#autoevaluacion" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Autoevaluaci&oacute;n</a>
+                    <a href="#mentores" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Mentores</a>
+                    <a href="#formulario" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Postula</a>
+                    <a href="#faq" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Preguntas</a>
                 </div>
                 <div class="flex items-center gap-3">
-                    <a href="#formulario" class="hidden rounded-xl border border-white/60 bg-white px-5 py-2.5 text-sm font-semibold text-blue-900 transition-all hover:bg-blue-50 hover:text-blue-900 lg:inline-flex">Postula ahora</a>
-                    <button id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/30 bg-white/10 text-white transition hover:border-white/60 lg:hidden" aria-label="Abrir men&uacute;" aria-expanded="false">
+                    <a href="#formulario" class="hidden rounded-xl border border-transparent bg-navacerrada-blue px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-teal-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 lg:inline-flex">Postula ahora</a>
+                    <button id="menuToggle" class="menu-toggle inline-flex h-10 w-10 items-center justify-center rounded-xl border bg-white/80 transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navacerrada-blue/70 lg:hidden" aria-label="Abrir men&uacute;" aria-expanded="false">
                         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="4" y1="6" x2="20" y2="6"></line>
                             <line x1="4" y1="12" x2="20" y2="12"></line>
@@ -142,17 +191,17 @@
                         </svg>
                     </button>
                 </div>
+                </div>
+            <div id="mobileNav" class="nav-shell-mobile mt-3 hidden flex-col gap-3 rounded-2xl border px-5 py-4 text-sm font-medium text-slate-700 shadow-sm lg:hidden">
+                <a href="#porque" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Por&nbsp;qu&eacute; Navacerrada25</a>
+                <a href="#como" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">C&oacute;mo funciona</a>
+                <a href="#autoevaluacion" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Autoevaluaci&oacute;n</a>
+                <a href="#mentores" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Mentores</a>
+                <a href="#formulario" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Postula</a>
+                <a href="#faq" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Preguntas frecuentes</a>
+                <a href="#formulario" class="inline-flex items-center justify-center rounded-xl bg-navacerrada-blue px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500">Enviar mi idea</a>
             </div>
-            <div id="mobileNav" class="nav-shell-mobile mt-3 hidden flex-col gap-4 rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-sm font-semibold text-blue-100/80 transition-colors supports-[backdrop-filter]:bg-white/15 lg:hidden">
-                <a href="#porque" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Por&nbsp;qu&eacute; Navacerrada25</a>
-                <a href="#como" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">C&oacute;mo funciona</a>
-                <a href="#autoevaluacion" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Autoevaluaci&oacute;n</a>
-                <a href="#mentores" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Mentores</a>
-                <a href="#formulario" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Postula</a>
-                <a href="#faq" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-white/10">Preguntas frecuentes</a>
-                <a href="#formulario" class="inline-flex items-center justify-center rounded-xl border border-white/60 bg-white px-4 py-3 text-blue-900 transition hover:bg-blue-50">Enviar mi idea</a>
-            </div>
-        </div>
+                </div>
     </nav>
 
 
@@ -175,16 +224,15 @@
                     <p class="text-base text-blue-100/80 md:text-lg">
                         Mentoría personalizada + financiación adaptada = impacto sostenible para tu territorio.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#formulario" class="inline-flex items-center gap-3 rounded-xl bg-white px-9 py-4 text-lg font-semibold text-blue-900 shadow-xl transition hover:-translate-y-1 hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                                        <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+                        <a href="#formulario" class="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-base font-semibold text-blue-900 shadow-xl transition hover:-translate-y-1 hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto sm:text-lg">
                             Postula ahora
-                            <span aria-hidden="true">→</span>
+                            <span aria-hidden="true">&rarr;</span>
                         </a>
-                        <a href="#porque" class="inline-flex items-center gap-3 rounded-xl border border-white/40 bg-white/10 px-9 py-4 text-lg font-semibold text-white transition hover:bg-white/20 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-                            ¿Por qué Navacerrada25?
+                        <a href="#porque" class="inline-flex w-full items-center justify-center gap-3 rounded-xl border border-white/40 bg-white/10 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/20 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto sm:text-lg">
+                            �Por qu� Navacerrada25?
                         </a>
-                    </div>
-                </div>
+                    </div>                </div>
                 <div class="order-first flex flex-col items-center md:order-none">
                     <div class="relative w-full max-w-sm sm:max-w-md md:max-w-lg">
                         <div class="relative z-10 rounded-[28px] border border-white/40 bg-white/10 p-4 shadow-2xl backdrop-blur-sm">
@@ -193,7 +241,7 @@
                         </div>
                         <div aria-hidden="true" class="absolute -left-8 -top-8 hidden h-32 w-32 rounded-full bg-teal-400/25 blur-3xl md:block"></div>
                         <div aria-hidden="true" class="absolute -bottom-10 -right-6 hidden h-40 w-40 rounded-full bg-blue-400/25 blur-3xl md:block"></div>
-                    </div>
+                </div>
                     <div class="mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-6">
                         <div class="rounded-xl border border-teal-500/60 bg-white/95 px-6 py-4 text-center text-gray-900 shadow-xl">
                             <p class="text-3xl font-extrabold">125+</p>
@@ -203,9 +251,9 @@
                             <p class="text-3xl font-extrabold">1.800+</p>
                             <p class="text-xs uppercase tracking-wide text-gray-600">Fellows globales</p>
                         </div>
-                    </div>
                 </div>
-            </div>
+                </div>
+                </div>
         </div>
     </header>
     <main id="contenido" class="space-y-24 py-24 md:space-y-32 md:py-32" role="main" aria-label="Contenido principal Navacerrada25">
@@ -366,7 +414,7 @@
                                     <option value="0">Nos falta tiempo o equipo para avanzar</option>
                                 </select>
                             </div>
-                        </div>
+                </div>
                     </form>
                     <div class="rounded-2xl bg-slate-900 px-6 py-5 text-white">
                         <p class="text-xs font-semibold uppercase tracking-wide text-teal-200">Tu preparaci&oacute;n</p>
@@ -379,7 +427,7 @@
                     </div>
                     <p class="text-xs text-slate-500">Recuerda: Navacerrada25 no realiza inversi&oacute;n directa. Usamos estos datos para priorizar mentor&iacute;a y conexiones alineadas a tu etapa.</p>
                 </div>
-            </div>
+                </div>
         </section>
         <section id="mentores" data-section class="mx-auto max-w-6xl px-6">
             <div class="text-center">
@@ -513,7 +561,7 @@
                                 <label for="ubicacion" class="mb-2 block text-sm font-semibold text-slate-700">Ubicación del proyecto *</label>
                                 <input type="text" id="ubicacion" name="ubicacion" required maxlength="80" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Barrio o zona rural específica">
                             </div>
-                        </div>
+                </div>
                     </fieldset>
                     <fieldset class="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
                         <legend class="mb-6 flex items-center gap-3 text-xl font-semibold text-slate-900">
@@ -536,7 +584,7 @@
                                 <label for="emailAval" class="mb-2 block text-sm font-semibold text-slate-700">Email del Fellow *</label>
                                 <input type="email" id="emailAval" name="emailAval" required maxlength="80" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="email@ejemplo.com">
                             </div>
-                        </div>
+                </div>
                     </fieldset>
                     <fieldset class="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
                         <legend class="mb-6 flex items-center gap-3 text-xl font-semibold text-slate-900">
@@ -565,7 +613,7 @@
                                     <p id="problemaHelp">Sé específico y usa datos cuando sea posible.</p>
                                     <p id="problemaCountText" class="text-slate-400"><span id="problemaCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
                                 </div>
-                            </div>
+                </div>
                             <div>
                                 <label for="solucion" class="mb-2 block text-sm font-semibold text-slate-700">Tu solución *</label>
                                 <textarea id="solucion" name="solucion" rows="5" maxlength="4000" required aria-describedby="solucionHelp solucionCountText" class="w-full resize-y rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="¿Cómo propones resolver el problema? ¿Qué hace única tu solución? ¿Qué actividades o servicios ofrecerás? ¿Ya está validada?"></textarea>
@@ -573,7 +621,7 @@
                                     <p id="solucionHelp">Describe tu propuesta de valor y qué la diferencia.</p>
                                     <p id="solucionCountText" class="text-slate-400"><span id="solucionCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
                                 </div>
-                            </div>
+                </div>
                             <div>
                                 <label for="impacto" class="mb-2 block text-sm font-semibold text-slate-700">Impacto esperado *</label>
                                 <textarea id="impacto" name="impacto" rows="3" maxlength="2000" required aria-describedby="impactoHelp impactoCountText" class="w-full resize-y rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="¿A cuántas personas beneficiarás? ¿Qué cambio concreto generarás? ¿Cómo lo medirás y en qué plazo?"></textarea>
@@ -581,7 +629,7 @@
                                     <p id="impactoHelp">Incluye métricas y horizonte temporal.</p>
                                     <p id="impactoCountText" class="text-slate-400"><span id="impactoCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
                                 </div>
-                            </div>
+                </div>
                             <div>
                                 <label for="apoyo" class="mb-2 block text-sm font-semibold text-slate-700">¿Qué apoyo necesitas de Navacerrada25? *</label>
                                 <textarea id="apoyo" name="apoyo" rows="3" maxlength="2000" required aria-describedby="apoyoHelp apoyoCountText" class="w-full resize-y rounded-xl border-2 border-slate-200 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Explícanos qué mentoría, conexiones o recursos necesitas para avanzar."></textarea>
@@ -589,7 +637,7 @@
                                     <p id="apoyoHelp">Sé concreto para facilitar el match con mentores.</p>
                                     <p id="apoyoCountText" class="text-slate-400"><span id="apoyoCount" aria-live="polite" aria-atomic="true">0</span> caracteres</p>
                                 </div>
-                            </div>
+                </div>
                         </div>
                     </fieldset>
                     <div class="rounded-2xl bg-gradient-to-r from-blue-600 to-teal-600 px-8 py-10 text-center text-white shadow-xl">
@@ -727,12 +775,12 @@
                     <p class="mt-4 text-slate-300">navacerrada25@gmail.com</p>
                     <p class="mt-2 text-sm text-slate-400">Madrid · España</p>
                 </div>
-            </div>
+                </div>
             <div class="flex flex-col gap-3 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
                 <p>© 2025 Navacerrada25. Todos los derechos reservados.</p>
                 <p>Última edición: Octubre 2025.</p>
             </div>
-        </div>
+                </div>
     </footer>
 
     <button id="backToTop" type="button" class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300 opacity-0 pointer-events-none" aria-label="Volver arriba">
@@ -1086,12 +1134,8 @@
                             if (!href || !sectionId) return;
                             const isActive = href === `#${sectionId}`;
                             if (isActive) {
-                                link.classList.add('text-white', 'font-semibold');
-                                link.classList.remove('text-blue-100/80');
                                 link.setAttribute('aria-current', 'page');
                             } else {
-                                link.classList.remove('text-white', 'font-semibold');
-                                link.classList.add('text-blue-100/80');
                                 link.setAttribute('aria-current', 'false');
                             }
                         });
@@ -1144,6 +1188,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
