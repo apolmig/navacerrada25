@@ -176,7 +176,6 @@
                 <div class="hidden items-center gap-7 text-sm font-medium lg:flex">
                     <a href="#porque" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Por&nbsp;qu&eacute;</a>
                     <a href="#como" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">C&oacute;mo funciona</a>
-                    <a href="#autoevaluacion" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Autoevaluaci&oacute;n</a>
                     <a href="#mentores" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Mentores</a>
                     <a href="#faq" data-nav-target class="nav-link transition-colors duration-200 hover:text-navacerrada-blue focus-visible:outline-none focus-visible:text-navacerrada-blue">Preguntas</a>
                 </div>
@@ -194,8 +193,7 @@
             <div id="mobileNav" class="nav-shell-mobile mt-3 hidden flex-col gap-3 rounded-2xl border px-5 py-4 text-sm font-medium text-slate-700 shadow-sm lg:hidden">
                 <a href="#porque" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Por&nbsp;qu&eacute; Navacerrada25</a>
                 <a href="#como" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">C&oacute;mo funciona</a>
-                <a href="#autoevaluacion" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Autoevaluaci&oacute;n</a>
-                <a href="#mentores" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Mentores</a>
+               <a href="#mentores" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Mentores</a>
                 <a href="#faq" data-nav-target class="nav-link block rounded-lg px-3 py-2 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navacerrada-blue/60">Preguntas frecuentes</a>
                 <a href="#formulario" class="inline-flex items-center justify-center rounded-xl bg-navacerrada-blue px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500">Enviar mi idea</a>
             </div>
@@ -350,81 +348,7 @@
                 </article>
             </div>
         </section>
-        <section id="autoevaluacion" data-section class="mx-auto max-w-6xl px-6">
-            <div class="grid gap-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl lg:grid-cols-[1.1fr,1fr] lg:p-12">
-                <div class="space-y-5">
-                    <span class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-slate-700">Autoevaluaci&oacute;n</span>
-                    <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Valida en minutos si tu idea est&aacute; lista</h2>
-                    <p class="text-lg text-slate-600">Somos Fellows de Acumen. No invertimos de forma directa, pero s&iacute; te acompa&ntilde;amos para pulir tu propuesta, conectar con comunidad y encontrar rutas de financiaci&oacute;n alineadas.</p>
-                    <ul class="space-y-3 text-slate-600">
-                        <li class="flex gap-3"><span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-teal-500"></span><span>Responde esta autoevaluaci&oacute;n para identificar en qu&eacute; temas enfocarte antes de conversar con un mentor.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-teal-500"></span><span>Si tu puntaje es bajo, no pasa nada: te daremos recomendaciones accionables.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-teal-500"></span><span>Comparte tus resultados al escribirnos para que podamos personalizar el acompa&ntilde;amiento.</span></li>
-                    </ul>
-                </div>
-                <div class="space-y-6">
-                    <form id="readinessForm" class="space-y-5" novalidate>
-                        <div class="space-y-4">
-                            <div>
-                                <label for="score-problema" class="mb-2 block text-sm font-semibold text-slate-800">Problema identificado</label>
-                                <select id="score-problema" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
-                                    <option value="">Selecciona una opci&oacute;n</option>
-                                    <option value="2">Tenemos evidencia clara del problema y de a qui&eacute;n afecta</option>
-                                    <option value="1">Estamos recogiendo datos y testimonios</option>
-                                    <option value="0">A&uacute;n es una intuici&oacute;n, sin datos</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="score-comunidad" class="mb-2 block text-sm font-semibold text-slate-800">V&iacute;nculo con la comunidad</label>
-                                <select id="score-comunidad" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
-                                    <option value="">Selecciona una opci&oacute;n</option>
-                                    <option value="2">Estamos co-creando soluciones con la comunidad</option>
-                                    <option value="1">Tenemos conversaciones frecuentes, buscamos m&aacute;s aliados</option>
-                                    <option value="0">Necesitamos acercarnos y comprender mejor</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="score-solucion" class="mb-2 block text-sm font-semibold text-slate-800">Nivel de validaci&oacute;n</label>
-                                <select id="score-solucion" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
-                                    <option value="">Selecciona una opci&oacute;n</option>
-                                    <option value="2">Contamos con piloto o versi&oacute;n beta en marcha</option>
-                                    <option value="1">Tenemos un plan y materiales listos para probar</option>
-                                    <option value="0">A&uacute;n estamos dise&ntilde;ando la propuesta</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="score-apoyo" class="mb-2 block text-sm font-semibold text-slate-800">Tipo de apoyo solicitado</label>
-                                <select id="score-apoyo" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
-                                    <option value="">Selecciona una opci&oacute;n</option>
-                                    <option value="2">Sabemos qu&eacute; mentor&iacute;a, conexiones o aprendizaje necesitamos</option>
-                                    <option value="1">Tenemos una idea general, buscamos priorizar</option>
-                                    <option value="0">Queremos explorar posibilidades desde cero</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="score-dedicacion" class="mb-2 block text-sm font-semibold text-slate-800">Dedicaci&oacute;n y equipo</label>
-                                <select id="score-dedicacion" data-score class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500">
-                                    <option value="">Selecciona una opci&oacute;n</option>
-                                    <option value="2">Podemos dedicar 4-6 horas al mes y contamos con apoyo de equipo</option>
-                                    <option value="1">Podemos dedicar tiempo limitado, necesitamos organizarnos</option>
-                                    <option value="0">Nos falta tiempo o equipo para avanzar</option>
-                                </select>
-                            </div>
-                </div>
-                    </form>
-                    <div class="rounded-2xl bg-slate-900 px-6 py-5 text-white">
-                        <p class="text-xs font-semibold uppercase tracking-wide text-teal-200">Tu preparaci&oacute;n</p>
-                        <p id="scoreValue" class="mt-2 text-3xl font-bold">0/10</p>
-                        <p id="scoreMessage" aria-live="polite" class="mt-3 text-sm text-slate-200">Responde todas las preguntas para ver recomendaciones.</p>
-                    </div>
-                    <div class="flex flex-col gap-3 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-                        <button id="resetReadiness" type="button" class="inline-flex items-center justify-center rounded-lg border border-teal-600 px-4 py-2 text-teal-700 transition hover:bg-teal-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">Limpiar respuestas</button>
-                        <p>Comparte tu resultado cuando escribas a <a href="mailto:navacerrada25@gmail.com" class="font-semibold text-teal-600 underline">navacerrada25@gmail.com</a>.</p>
-                    </div>
-                    <p class="text-xs text-slate-500">Recuerda: Navacerrada25 no realiza inversi&oacute;n directa. Usamos estos datos para priorizar mentor&iacute;a y conexiones alineadas a tu etapa.</p>
-                </div>
-                </div>
-        </section>
+       
         <section id="mentores" data-section class="mx-auto max-w-6xl px-6">
             <div class="text-center">
                 <span class="inline-flex items-center gap-2 rounded-full bg-purple-100 px-5 py-2 text-sm font-semibold tracking-wide text-purple-700">
